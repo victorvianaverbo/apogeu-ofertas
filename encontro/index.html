@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encontro Entre Palestrantes | Edição Especial Belvedere | Bruno Bettini</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/.netlify/images?url=/assets/perfil.png&w=180&h=180&fit=cover&q=80">
   <meta name="description" content="O mapa real do negócio de palestras, ao vivo em Belo Horizonte. 08 de julho de 2026, no Belvedere. Com Bruno Bettini, fundador da Avantik Palestras." />
   <meta property="og:title" content="Encontro Entre Palestrantes | Edição Especial Belvedere" />
   <meta property="og:description" content="Palestra não é improviso. É negócio. 08 de julho de 2026, 19h, Auditório Ademicon, Belvedere - BH. Com Bruno Bettini." />
@@ -1036,9 +1038,13 @@ em { font-style: italic; }
 
     // Intercepta todos os CTAs que iam para a Sympla
     document.addEventListener("click", function (e) {
+      // cliques dentro do proprio popup nao sao CTAs
+      if (e.target.closest && e.target.closest(".lead-modal")) {
+        if (e.target.closest("[data-close]")) close();
+        return;
+      }
       var cta = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
       if (cta) { e.preventDefault(); open(cta.href); return; }
-      if (e.target.closest && e.target.closest("[data-close]")) close();
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 

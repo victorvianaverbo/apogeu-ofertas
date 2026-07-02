@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Desvendando o Mercado de Palestras | Bruno Bettini</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/.netlify/images?url=/assets/perfil.png&w=180&h=180&fit=cover&q=80">
   <meta name="description" content="O mapa completo e o passo a passo de onde está o dinheiro do mercado de palestras no Brasil." />
 
   <!-- Meta Pixel Code -->
@@ -509,9 +511,13 @@
 
     // Intercepta todos os CTAs de compra
     document.addEventListener("click", function (e) {
+      // cliques dentro do proprio popup nao sao CTAs (deixa o submit/fechar rodarem)
+      if (e.target.closest && e.target.closest(".lead-modal")) {
+        if (e.target.closest("[data-close]")) close();
+        return;
+      }
       var cta = e.target.closest && e.target.closest(".btn--primary, .oferta__cta, .footer__cta");
       if (cta) { e.preventDefault(); open(); return; }
-      if (e.target.closest && e.target.closest("[data-close]")) close();
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 
