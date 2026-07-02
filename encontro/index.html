@@ -979,12 +979,13 @@ em { font-style: italic; }
     }
   </script>
   <script src="script.js" defer></script>
-  <!-- Meta Pixel: InitiateCheckout ao clicar para comprar ingresso (Sympla) -->
+  <script src="/shared-capi.js" defer></script>
+  <!-- Meta Pixel + CAPI: InitiateCheckout ao clicar para comprar ingresso (Sympla) -->
   <script>
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
-      if (a && typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', { content_name: 'Ingresso Encontro Belvedere', value: 127, currency: 'BRL' });
+      if (a && typeof window.track === 'function') {
+        window.track('InitiateCheckout', { content_name: 'Ingresso Encontro Belvedere', value: 127, currency: 'BRL' });
       }
     });
   </script>

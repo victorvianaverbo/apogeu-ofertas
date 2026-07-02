@@ -455,12 +455,13 @@
     }
   </script>
   <script src="script.js" defer></script>
-  <!-- Meta Pixel: InitiateCheckout ao clicar nos CTAs de compra -->
+  <script src="/shared-capi.js" defer></script>
+  <!-- Meta Pixel + CAPI: InitiateCheckout ao clicar nos CTAs de compra -->
   <script>
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('.btn--primary, .oferta__cta, .footer__cta');
-      if (a && typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', { content_name: 'Low Ticket Desvendando', value: 47, currency: 'BRL' });
+      if (a && typeof window.track === 'function') {
+        window.track('InitiateCheckout', { content_name: 'Low Ticket Desvendando', value: 47, currency: 'BRL' });
       }
     });
   </script>

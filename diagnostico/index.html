@@ -159,19 +159,23 @@ src="https://www.facebook.com/tr?id=1028501882025260&ev=PageView&noscript=1"/></
 </footer>
 
 <script src="script.js" defer></script>
-<!-- Meta Pixel: eventos de conversao (delegation, cobre elementos dinamicos do quiz) -->
+<script src="/shared-capi.js" defer></script>
+<!-- Meta Pixel + CAPI: eventos de conversao (delegation, cobre elementos dinamicos do quiz) -->
 <script>
-  // Lead: quando o visitante envia os dados no final do quiz
+  // Lead: envio dos dados no final do quiz (com email/telefone/nome para match)
   document.addEventListener('submit', function (e) {
-    if (e.target && e.target.id === 'qForm' && typeof fbq === 'function') {
-      fbq('track', 'Lead', { content_name: 'Diagnostico Jogo do Palestrante' });
+    if (e.target && e.target.id === 'qForm' && typeof window.track === 'function') {
+      var nome = (document.getElementById('q-nome') || {}).value;
+      var email = (document.getElementById('q-email') || {}).value;
+      var zap = (document.getElementById('q-zap') || {}).value;
+      window.track('Lead', { content_name: 'Diagnostico Jogo do Palestrante' }, { em: email, ph: zap, fn: nome });
     }
   }, true);
-  // Contact: quando clica em agendar a Sessao Estrategica (WhatsApp)
+  // Contact: clique em agendar a Sessao Estrategica (WhatsApp)
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
-    if (a && typeof fbq === 'function') {
-      fbq('track', 'Contact', { content_name: 'Sessao Estrategica Zoom' });
+    if (a && typeof window.track === 'function') {
+      window.track('Contact', { content_name: 'Sessao Estrategica Zoom' });
     }
   });
 </script>

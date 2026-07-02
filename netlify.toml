@@ -5,6 +5,10 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Raiz redireciona para o topo de funil (o diagnóstico gratuito).
 # Fácil trocar o destino ou substituir por uma home depois.
 [[redirects]]
