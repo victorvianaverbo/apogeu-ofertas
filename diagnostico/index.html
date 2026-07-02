@@ -6,6 +6,18 @@
 <title>O Jogo do Palestrante | Apogeu</title>
 <meta name="description" content="Faça o diagnóstico gratuito e descubra em que fase do jogo você está como palestrante. Resultado na hora e Sessão Estratégica de 1 hora no Zoom com Bruno Bettini.">
 <meta name="theme-color" content="#141417">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1028501882025260');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1028501882025260&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="//ajokzpjguhfxxudteetr.supabase.co">
@@ -147,5 +159,21 @@
 </footer>
 
 <script src="script.js" defer></script>
+<!-- Meta Pixel: eventos de conversao (delegation, cobre elementos dinamicos do quiz) -->
+<script>
+  // Lead: quando o visitante envia os dados no final do quiz
+  document.addEventListener('submit', function (e) {
+    if (e.target && e.target.id === 'qForm' && typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'Diagnostico Jogo do Palestrante' });
+    }
+  }, true);
+  // Contact: quando clica em agendar a Sessao Estrategica (WhatsApp)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (a && typeof fbq === 'function') {
+      fbq('track', 'Contact', { content_name: 'Sessao Estrategica Zoom' });
+    }
+  });
+</script>
 </body>
 </html>

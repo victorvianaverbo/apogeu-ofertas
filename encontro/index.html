@@ -10,6 +10,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" />
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1028501882025260');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1028501882025260&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -966,6 +979,15 @@ em { font-style: italic; }
     }
   </script>
   <script src="script.js" defer></script>
+  <!-- Meta Pixel: InitiateCheckout ao clicar para comprar ingresso (Sympla) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
+      if (a && typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', { content_name: 'Ingresso Encontro Belvedere', value: 127, currency: 'BRL' });
+      }
+    });
+  </script>
 
 </body>
 </html>
