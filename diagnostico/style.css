@@ -21,6 +21,7 @@ body{
   margin:0; background:var(--marfim); color:var(--grafite-900);
   font-family:var(--ui); line-height:1.65; font-size:17px;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 .wrap{max-width:1140px;margin:0 auto;padding:0 48px}
 

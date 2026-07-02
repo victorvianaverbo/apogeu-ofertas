@@ -8,14 +8,16 @@
   <link rel="apple-touch-icon" href="/.netlify/images?url=/assets/perfil.png&w=180&h=180&fit=cover&q=80">
   <meta name="description" content="O mapa completo e o passo a passo de onde está o dinheiro do mercado de palestras no Brasil." />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (adiado para idle: nao bloqueia o carregamento) -->
   <script>
+  window.__loadPixel=function(){if(window.fbq)return;
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','1028501882025260');fbq('track','PageView');
+  fbq('init','1028501882025260');fbq('track','PageView');};
+  if('requestIdleCallback' in window){requestIdleCallback(window.__loadPixel,{timeout:2500});}else{setTimeout(window.__loadPixel,1800);}
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1028501882025260&ev=PageView&noscript=1"/></noscript>

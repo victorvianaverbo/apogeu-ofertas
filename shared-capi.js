@@ -19,8 +19,11 @@
     userData = userData || {};
     var id = uuid();
 
+    // Se o pixel ainda nao carregou (idle nao rodou), carrega agora antes de converter
+    if (typeof window.fbq !== "function" && typeof window.__loadPixel === "function") window.__loadPixel();
+
     // 1) Pixel no navegador (com eventID para dedup)
-    if (typeof fbq === "function") fbq("track", eventName, custom, { eventID: id });
+    if (typeof window.fbq === "function") window.fbq("track", eventName, custom, { eventID: id });
 
     // 2) CAPI no servidor (mesmo event_id)
     try {
