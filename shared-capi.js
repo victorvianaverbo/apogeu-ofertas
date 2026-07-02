@@ -42,4 +42,42 @@
       }).catch(function () {});
     } catch (e) {}
   };
+
+  // Captura de UTMs (first-touch persistente) + referrer/landing da sessao.
+  // Retorna objeto pronto para gravar junto com o lead no Supabase.
+  window.getUTMs = function () {
+    var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+    var out = {};
+    try {
+      var qs = new URLSearchParams(location.search);
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem("apg_utms") || "{}"); } catch (e) {}
+      var hasNew = keys.some(function (k) { return qs.get(k); });
+      keys.forEach(function (k) {
+        out[k] = qs.get(k) || (hasNew ? "" : (saved[k] || "")) || null;
+      });
+      if (hasNew) {
+        try {
+          localStorage.setItem("apg_utms", JSON.stringify({
+            utm_source: out.utm_source, utm_medium: out.utm_medium,
+            utm_campaign: out.utm_campaign, utm_content: out.utm_content, utm_term: out.utm_term
+          }));
+        } catch (e) {}
+      }
+      // referrer e landing_url = primeira pagina da sessao
+      var ft = {};
+      try { ft = JSON.parse(sessionStorage.getItem("apg_ft") || "{}"); } catch (e) {}
+      if (!ft.landing_url) {
+        ft.landing_url = location.href;
+        ft.referrer = document.referrer || "";
+        try { sessionStorage.setItem("apg_ft", JSON.stringify(ft)); } catch (e) {}
+      }
+      out.referrer = ft.referrer || null;
+      out.landing_url = ft.landing_url || location.href;
+    } catch (e) {}
+    return out;
+  };
+
+  // Persiste o first-touch assim que a pagina carrega (em qualquer uma das LPs)
+  try { window.getUTMs(); } catch (e) {}
 })();

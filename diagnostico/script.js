@@ -94,7 +94,8 @@
   // Integração Supabase: insere o lead (fire-and-forget, nunca bloqueia o resultado)
   function saveLead(contact, answers, profileName) {
     try {
-      const payload = {
+      const utm = (window.getUTMs && window.getUTMs()) || {};
+      const payload = Object.assign({
         nome: contact.nome,
         email: contact.email,
         whatsapp: contact.whatsapp,
@@ -102,7 +103,7 @@
         score: score(),
         perfil: profileName,
         origem: "jogo-do-palestrante",
-      };
+      }, utm);
       fetch(SUPA_URL + "/rest/v1/diagnostico_leads", {
         method: "POST",
         headers: {

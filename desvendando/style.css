@@ -1139,3 +1139,70 @@ em { font-style: italic; }
 .hero__aside .stat { border-bottom-color: rgba(255, 255, 255, 0.12); }
 .hero__aside .stat__desc { color: var(--nevoa); }
 .hero__aside .aside__foot { color: var(--grafite-400); border-top-color: rgba(255, 255, 255, 0.12); }
+
+/* =========================================================
+   POPUP DE CAPTURA (nome + WhatsApp)
+   ========================================================= */
+.lead-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
+.lead-modal.is-open { display: block; }
+.lead-modal__overlay {
+  position: absolute; inset: 0;
+  background: rgba(10, 10, 12, 0.72);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: leadFade 0.25s var(--ease-out);
+}
+.lead-modal__card {
+  position: relative; z-index: 1;
+  width: min(440px, calc(100vw - 2rem));
+  margin: max(6vh, 1.5rem) auto; max-height: 90vh; overflow-y: auto;
+  background: linear-gradient(180deg, #202027, #16161a);
+  border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 1.5rem;
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), 0 0 60px rgba(237, 125, 43, 0.10);
+  animation: leadPop 0.35s var(--ease-spring); text-align: center;
+}
+.lead-modal__card::before {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: clamp(120px, 45%, 220px); height: 2px;
+  background: linear-gradient(90deg, transparent, var(--brasa-500), transparent);
+}
+@keyframes leadFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes leadPop { from { opacity: 0; transform: translateY(16px) scale(0.97); } to { opacity: 1; transform: none; } }
+.lead-modal__x {
+  position: absolute; top: 0.9rem; right: 1.1rem; background: none; border: none;
+  cursor: pointer; font-size: 1.7rem; line-height: 1; color: var(--grafite-400); transition: color 0.2s;
+}
+.lead-modal__x:hover { color: var(--on-dark); }
+.lead-modal__eyebrow {
+  font-family: var(--font-label); font-size: 0.68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.22em; color: var(--brasa-400); margin-bottom: 0.7rem;
+}
+.lead-modal__title {
+  font-family: var(--font-heading); font-weight: 600; font-size: clamp(1.6rem, 4vw, 2.1rem);
+  line-height: 1.1; color: var(--on-dark); margin-bottom: 0.7rem;
+}
+.lead-modal__sub {
+  font-size: 0.98rem; line-height: 1.5; color: var(--on-dark-2);
+  margin-bottom: 1.6rem; max-width: 34ch; margin-left: auto; margin-right: auto;
+}
+.lead-modal__form { display: flex; flex-direction: column; gap: 0.9rem; text-align: left; }
+.lead-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.lead-field label {
+  font-family: var(--font-label); font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em; color: var(--nevoa);
+}
+.lead-field input {
+  width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--on-dark);
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.7rem; padding: 0.85rem 1rem; transition: border-color 0.25s, background 0.25s;
+}
+.lead-field input::placeholder { color: var(--grafite-400); }
+.lead-field input:focus { outline: none; border-color: var(--brasa-500); background: rgba(255, 255, 255, 0.08); }
+.lead-modal__err { color: #ff9d6b; font-size: 0.85rem; margin: 0.2rem 0 0; }
+.lead-modal__submit { width: 100%; margin-top: 0.4rem; }
+.lead-modal__submit:disabled { opacity: 0.7; cursor: default; }
+.lead-modal__micro {
+  font-family: var(--font-label); font-size: 0.76rem; color: var(--grafite-400);
+  text-align: center; margin-top: 0.2rem;
+}
+@media (prefers-reduced-motion: reduce) { .lead-modal__overlay, .lead-modal__card { animation: none; } }

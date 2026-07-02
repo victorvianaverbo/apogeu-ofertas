@@ -978,16 +978,115 @@ em { font-style: italic; }
       });
     }
   </script>
+  <!-- ============ POPUP DE CAPTURA (nome + WhatsApp) ============ -->
+  <div class="lead-modal" id="leadModal" aria-hidden="true">
+    <div class="lead-modal__overlay" data-close></div>
+    <div class="lead-modal__card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+      <button class="lead-modal__x" type="button" data-close aria-label="Fechar">&times;</button>
+      <p class="lead-modal__eyebrow">Falta pouco</p>
+      <h3 class="lead-modal__title" id="leadModalTitle">Garanta sua vaga no Encontro</h3>
+      <p class="lead-modal__sub">Deixe seu nome e WhatsApp para seguir com a inscrição e receber os detalhes do evento.</p>
+      <form class="lead-modal__form" id="leadForm" novalidate>
+        <div class="lead-field">
+          <label for="lead-nome">Seu nome</label>
+          <input id="lead-nome" name="nome" type="text" autocomplete="name" placeholder="Nome completo" required>
+        </div>
+        <div class="lead-field">
+          <label for="lead-zap">Seu WhatsApp</label>
+          <input id="lead-zap" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required>
+        </div>
+        <p class="lead-modal__err" id="leadErr" hidden>Preencha nome e WhatsApp para continuar.</p>
+        <button class="btn btn--primary btn--lg lead-modal__submit" type="submit">Continuar para a inscrição</button>
+        <p class="lead-modal__micro">Você será direcionado para o checkout seguro da Sympla.</p>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
   <script src="/shared-capi.js" defer></script>
-  <!-- Meta Pixel + CAPI: InitiateCheckout ao clicar para comprar ingresso (Sympla) -->
+  <!-- Captura de lead + Meta Pixel/CAPI antes de ir para a Sympla -->
   <script>
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
-      if (a && typeof window.track === 'function') {
-        window.track('InitiateCheckout', { content_name: 'Ingresso Encontro Belvedere', value: 127, currency: 'BRL' });
+  (function () {
+    var SUPA_URL = "https://ajokzpjguhfxxudteetr.supabase.co";
+    var SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqb2t6cGpndWhmeHh1ZHRlZXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjQ1NTQsImV4cCI6MjA5MDQwMDU1NH0.TG-ASfMGgNY4BoHsFQx8TQ-4HPVsdbGEu4zJuFAeiNg";
+    var SYMPLA = "https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515";
+
+    var modal = document.getElementById("leadModal");
+    var form = document.getElementById("leadForm");
+    var errEl = document.getElementById("leadErr");
+    var targetUrl = SYMPLA;
+
+    function open(url) {
+      targetUrl = url || SYMPLA;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      var n = document.getElementById("lead-nome");
+      if (n) setTimeout(function () { n.focus(); }, 60);
+      // intencao de compra
+      if (typeof window.track === "function") {
+        window.track("InitiateCheckout", { content_name: "Ingresso Encontro Belvedere", value: 127, currency: "BRL" });
       }
+    }
+    function close() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // Intercepta todos os CTAs que iam para a Sympla
+    document.addEventListener("click", function (e) {
+      var cta = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
+      if (cta) { e.preventDefault(); open(cta.href); return; }
+      if (e.target.closest && e.target.closest("[data-close]")) close();
     });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+    function saveLead(nome, whatsapp) {
+      try {
+        var utm = (window.getUTMs && window.getUTMs()) || {};
+        var payload = Object.assign(
+          { nome: nome, whatsapp: whatsapp, origem: "lp-encontro-belvedere" },
+          utm
+        );
+        return fetch(SUPA_URL + "/rest/v1/encontro_leads", {
+          method: "POST",
+          headers: {
+            "apikey": SUPA_KEY,
+            "Authorization": "Bearer " + SUPA_KEY,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload),
+          keepalive: true
+        });
+      } catch (e) { return Promise.resolve(); }
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nome = (document.getElementById("lead-nome").value || "").trim();
+      var zap = (document.getElementById("lead-zap").value || "").trim();
+      if (!nome || zap.replace(/\D/g, "").length < 8) {
+        errEl.hidden = false;
+        return;
+      }
+      errEl.hidden = true;
+      var btn = form.querySelector(".lead-modal__submit");
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      // Lead (Pixel + CAPI) com nome/telefone para match
+      if (typeof window.track === "function") {
+        window.track("Lead", { content_name: "Inscricao Encontro Belvedere", value: 127, currency: "BRL" }, { ph: zap, fn: nome });
+      }
+
+      var went = false;
+      function go() { if (went) return; went = true; window.location.href = targetUrl; }
+      saveLead(nome, zap).finally(go);
+      setTimeout(go, 1500); // fallback: nunca prende o usuario
+    });
+  })();
   </script>
 
 </body>
