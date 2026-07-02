@@ -1,0 +1,33 @@
+# Apogeu do Palestrante — ofertas (Bruno Bettini)
+# Site estático: diagnóstico (quiz), desvendando (low ticket), encontro (evento)
+# Sem build. Publica a raiz do repo.
+
+[build]
+  publish = "."
+
+# Raiz redireciona para o topo de funil (o diagnóstico gratuito).
+# Fácil trocar o destino ou substituir por uma home depois.
+[[redirects]]
+  from = "/"
+  to = "/diagnostico/"
+  status = 302
+
+# URLs limpas sem barra final também resolvem
+[[redirects]]
+  from = "/diagnostico"
+  to = "/diagnostico/"
+  status = 301
+[[redirects]]
+  from = "/desvendando"
+  to = "/desvendando/"
+  status = 301
+[[redirects]]
+  from = "/encontro"
+  to = "/encontro/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
