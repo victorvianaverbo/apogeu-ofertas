@@ -5,6 +5,7 @@
    - WhatsApp: wa.me com mensagem prefixada pelo perfil */
 (function () {
   const WHATS = "5531984240009";
+  const CALENDLY = "https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&month=2026-07";
   const KEY = "jogo-palestrante-quiz";
 
   // --- Supabase (anon key publica, mesma do projeto Avantik) ---
@@ -227,7 +228,10 @@
       <p class="r-sub">Suas próximas jogadas</p>
       <div class="r-moves">${p.moves.map(m => `<span>${m}</span>`).join("")}</div>
       <p class="r-virada">${p.virada}</p>
-      <a class="btn btn-primary" href="https://wa.me/${WHATS}?text=${msg}" target="_blank" rel="noopener">Quero minha Sessão Estratégica</a>
+      <div class="r-ctas">
+        <a class="btn btn-primary" href="${CALENDLY}" target="_blank" rel="noopener">Agendar minha Sessão Estratégica</a>
+        <a class="btn btn-wpp" href="https://wa.me/${WHATS}?text=${msg}" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
       <button class="q-back" id="qRedo">Refazer o diagnóstico</button>`;
     frame.querySelector("#qRedo").addEventListener("click", () => {
       state = { stage: "intro", idx: 0, answers: [], contact: state.contact };

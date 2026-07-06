@@ -64,6 +64,16 @@ body{
   background:var(--grafite-900); color:var(--marfim);
 }
 .btn-dark:hover{transform:translateY(-2px)}
+/* contorno sobre fundo escuro (par do primary no resultado) */
+.btn-wpp{
+  background:transparent; color:var(--marfim);
+  border:1.5px solid rgba(246,244,241,.3);
+  transition:transform .15s ease, border-color .2s ease, color .2s ease, background .2s ease;
+}
+.btn-wpp:hover{transform:translateY(-2px);border-color:var(--brasa-400);color:var(--brasa-300);background:rgba(237,125,43,.08)}
+/* pilha de CTAs do resultado (Calendly + WhatsApp) */
+.r-ctas{display:flex;flex-direction:column;gap:12px;margin:0 0 8px}
+.r-ctas .btn{width:100%}
 
 /* micro reassurance under CTA */
 .micro{
