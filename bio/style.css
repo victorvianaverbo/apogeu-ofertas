@@ -147,6 +147,19 @@ a { color:inherit; text-decoration:none; }
   align-self:flex-start; margin-top:0.1rem;
   box-shadow:0 4px 14px rgba(237,125,43,0.3);
 }
+/* pilha de selos (data + local/tipo) */
+.lk__badges {
+  flex-shrink:0;
+  display:flex; flex-direction:column; gap:0.35rem;
+  align-self:flex-start; margin-top:0.1rem;
+}
+.lk__badges .lk__badge { align-self:stretch; margin-top:0; text-align:center; }
+.lk__badge--outline {
+  color:var(--brasa-300);
+  background:rgba(251,180,76,0.08);
+  border:1px solid rgba(251,180,76,0.45);
+  box-shadow:none;
+}
 .lk__arrow { flex-shrink:0; color:var(--brasa-400); transition:transform 0.35s var(--ease-out); }
 .lk__arrow--out { color:var(--grafite-400); }
 

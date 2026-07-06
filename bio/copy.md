@@ -16,7 +16,7 @@
 - **Foto:** foto do Bruno (assets/perfil.png), formato redondo, com moldura brasa sutil
 - **Nome:** Bruno Bettini
 - **Tagline:** Fundador da Avantik · Apogeu do Palestrante
-- **Sub-tagline:** Ajudo palestrantes a viverem de palco — com método, mercado e posicionamento.
+- **Sub-tagline:** Ajudo palestrantes a viverem de palco, com método, mercado e posicionamento. (sem travessão)
 - **Micro-linha (chamada):** Escolha por onde começar.
 
 ---
@@ -30,34 +30,40 @@
   - Selo (opcional): GRÁTIS
 
 - **Botão 2**
-  - Rótulo: Encontro Entre Palestrantes — Belvedere
-  - Subtexto: Evento presencial em BH. 08 de julho. Vagas limitadas.
+  - Rótulo: Encontro Entre Palestrantes (sem travessão; "Belvedere" vira selo)
+  - Subtexto: Evento presencial em BH. Vagas limitadas.
   - Destino: /encontro/
-  - Selo (opcional): 08 JUL
+  - Selos (pilha): 08 JUL (brasa) + BELVEDERE (contorno)
 
 - **Botão 3**
+  - Rótulo: Dominando o Mercado de Palestras
+  - Subtexto: 3 dias presenciais pra montar o seu negócio de palestrante.
+  - Destino: /dominando-o-mercado-de-palestras/
+  - Selos (pilha): 24 A 26 JUL (brasa) + IMERSÃO (contorno)
+
+- **Botão 4**
   - Rótulo: Desvendando o Mercado de Palestras
   - Subtexto: A aula-mapa de onde está o dinheiro do mercado. R$ 47.
   - Destino: /desvendando/
   - Selo (opcional): R$ 47
 
-- **Botão 4**
+- **Botão 5**
   - Rótulo: Ecossistema Apogeu do Palestrante
   - Subtexto: Tudo o que você precisa pra viver de palestras, num lugar só.
   - Destino: / (home do ecossistema)
 
-- **Botão 5**
-  - Rótulo: Ecossistema Avantik Palestras
-  - Subtexto: O marketplace que te conecta a quem contrata palestrante.
+- **Botão 6 (voltado a CONTRATANTES, não a palestrantes)**
+  - Etiqueta: Para empresas e eventos
+  - Rótulo: Avantik Palestras (logo)
+  - Subtexto: Precisa de um palestrante? Encontre o nome ideal pro seu evento.
   - Destino: https://avantikpalestras.com.br (abre em nova aba)
 
 ---
 
 ## Rodapé
 
-- **Assinatura:** Apogeu do Palestrante
-- **Instagram:** @apogeudopalestrante
-- **Micro (legal/marca):** Uma iniciativa Avantik.
+- **Assinatura:** Bruno Bettini
+- (SEM link/menção ao Instagram @apogeudopalestrante — removido a pedido do usuário)
 
 ---
 
