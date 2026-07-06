@@ -739,7 +739,7 @@ a:focus-visible, button:focus-visible {
   border-radius: 50%;
   border: 1px solid rgba(246, 244, 241, 0.25);
   font-family: var(--font-label);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.1rem;
   line-height: 1;
   color: var(--marfim);
