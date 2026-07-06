@@ -420,9 +420,8 @@ ul, ol { list-style: none; }
   margin: 0 1.6rem;
   transform: translateY(-1px);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .marquee__track { animation: marquee 26s linear infinite; }
-}
+/* anima sempre (pedido do usuário: não pausar nem com reduced motion) */
+.marquee__track { animation: marquee 26s linear infinite; }
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -590,7 +589,13 @@ ul, ol { list-style: none; }
   .hero__title { order: 1; }
   .hero__cta { order: 2; margin-top: 1.6rem; }
   .hero__sub { order: 3; margin-top: 1.8rem; }
-  .hero__pillars { order: 4; }
+  /* pilares empilhados: lista limpa, um por linha */
+  .hero__pillars {
+    order: 4;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
   .hero__facts { order: 5; }
   .hero__title { font-size: clamp(2.7rem, 12.5vw, 3.4rem); }
   .hero__facts { gap: 1.25rem 1.75rem; }

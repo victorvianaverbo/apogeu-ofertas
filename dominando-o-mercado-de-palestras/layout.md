@@ -4,7 +4,7 @@
 > SEM LOGOS do Apogeu (sem nav no hero; footer só contato + copyright).
 > Os dois botões de CTA abrem o modal de captura (nome + WhatsApp) e gravam o lead no
 > Supabase (tabela "dominando-o-mercado-de-palestras", ver leads.sql) antes de redirecionar.
-> WhatsApp da página: wa.me/553184240009 (31 8424-0009).
+> WhatsApp da página: wa.me/5531984240009 (31 9 8424-0009).
 > Base: copy.md (textos) + index.html/style.css aprovados (Hero + Seção 01).
 > Este documento é a bíblia da implementação no /desenvolver. Nada deve ser
 > interpretado ou simplificado: valores exatos abaixo.
@@ -82,7 +82,7 @@
   CTAs sempre em DOIS BOTÕES lado a lado (.cta-row, gap 0.9rem, empilha no 640px):
   1) .btn--fire = Calendly https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&month=2026-07
   2) .btn--wpp (contorno 1.5px rgba(246,244,241,0.3), hover borda/texto brasa + bg rgba(237,125,43,0.08))
-     = "Falar no WhatsApp" (wa.me/553184240009 com texto pré-preenchido); ambos target _blank rel noopener;
+     = "Falar no WhatsApp" (wa.me/5531984240009 com texto pré-preenchido); ambos target _blank rel noopener;
   ambos os botões abrem primeiro o modal de captura (nome + WhatsApp → Supabase) e só então redirecionam
 
 ---
@@ -477,7 +477,7 @@ Itens: "12 workshops práticos ◆ 3 dias imersivos ◆ das 9h às 20h ◆ Belo 
   - Estrutura | Ambiente pensado pra experiência do participante, com estrutura completa, conforto e atmosfera de treinamento imersivo
   - Estacionamento | Disponível nas imediações do espaço (pago)
   - Certificado | Sim, para todos os participantes
-- Contato: botão ghost "Falar com o suporte no WhatsApp" → https://wa.me/5531984240009 (31 8424-0009)
+- Contato: botão ghost "Falar com o suporte no WhatsApp" → https://wa.me/5531984240009 (31 9 8424-0009)
 
 ### Layout
 - Fundo marfim; padding clamp(4.5rem, 9vw, 8rem) var(--pad)
@@ -507,11 +507,11 @@ Itens: "12 workshops práticos ◆ 3 dias imersivos ◆ das 9h às 20h ◆ Belo 
 ### Conteúdo (exato da copy)
 - sec-tag: "10 Perguntas frequentes"
 - Título (coluna sticky): "Ficou alguma dúvida?"
-- Apoio (coluna sticky): "Se não encontrar a resposta aqui, chama o suporte no WhatsApp: 31 8424-0009."
+- Apoio (coluna sticky): "Se não encontrar a resposta aqui, chama o suporte no WhatsApp: 31 9 8424-0009."
 - Q&A (a primeira abre por padrão):
-  0. Como funciona a inscrição? | Antes de confirmar a vaga, você faz uma conversa online com o Bruno pra alinhar expectativas e validar se a imersão faz sentido pro seu momento. É só agendar o melhor horário no calendário ou chamar no WhatsApp 31 8424-0009.
+  0. Como funciona a inscrição? | Antes de confirmar a vaga, você faz uma conversa online com o Bruno pra alinhar expectativas e validar se a imersão faz sentido pro seu momento. É só agendar o melhor horário no calendário ou chamar no WhatsApp 31 9 8424-0009.
   1. Preciso levar algo? | Sim. Notebook, caderno e disposição pra aplicar em tempo real. Cada módulo tem práticas de construção e revisão.
-  2. Posso parcelar? | Sim, em até 12x de R$ 258,56. As condições de pagamento são alinhadas na conversa com o Bruno ou no suporte via WhatsApp 31 8424-0009.
+  2. Posso parcelar? | Sim, em até 12x de R$ 258,56. As condições de pagamento são alinhadas na conversa com o Bruno ou no suporte via WhatsApp 31 9 8424-0009.
   3. Tem certificado? | Sim, entregue ao final da imersão para todos os participantes.
   4. O estacionamento é gratuito? | Não, mas há opções próximas ao espaço, com acesso facilitado.
   5. O almoço está incluso? | Não. O intervalo de almoço é livre (12h às 13h30), com opções na região. O coffee break da tarde está incluso nos 3 dias.
@@ -564,7 +564,7 @@ Itens: "12 workshops práticos ◆ 3 dias imersivos ◆ das 9h às 20h ◆ Belo 
 - Divisor: border-top 1px rgba(246,244,241,0.1), margem-top clamp(4rem, 8vw, 6rem)
 - Layout: flex space-between align center, padding 2rem 0 0; em 640px empilha centrado gap 1.25rem
 - Esquerda: logo Apogeu branco 120px (/.netlify/images?url=/assets/logo-apogeu-branco.png&w=240&q=80)
-- Centro: "Suporte: 31 8424-0009 (WhatsApp)" Hanken 0.85rem nevoa, link wa.me
+- Centro: "Suporte: 31 9 8424-0009 (WhatsApp)" Hanken 0.85rem nevoa, link wa.me
 - Direita: "Apogeu do Palestrante © 2026" Jost 0.72rem uppercase ls 0.12em rgba(246,244,241,0.4)
 
 ### Animações

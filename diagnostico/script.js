@@ -4,7 +4,7 @@
    - saveLead(): insere o lead no Supabase (REST, fire-and-forget, nunca trava a UX)
    - WhatsApp: wa.me com mensagem prefixada pelo perfil */
 (function () {
-  const WHATS = "5531992185328";
+  const WHATS = "5531984240009";
   const KEY = "jogo-palestrante-quiz";
 
   // --- Supabase (anon key publica, mesma do projeto Avantik) ---

@@ -5,7 +5,7 @@
 > SEM LOGOS do Apogeu na página (decisão do usuário): sem nav no hero, footer só texto.
 > CAPTURA DE LEAD: os dois botões abrem um modal (nome + WhatsApp) antes de redirecionar;
 >   lead vai pro Supabase, tabela "dominando-o-mercado-de-palestras" (ver leads.sql).
-> WHATSAPP DA PÁGINA: +55 31 8424-0009 (wa.me/553184240009).
+> WHATSAPP DA PÁGINA: +55 31 9 8424-0009 (wa.me/5531984240009).
 > Produto high ticket do ecossistema Apogeu: R$ 2.500 (ou 12x de R$ 258,56).
 > NOME DO EVENTO: "Dominando o Mercado de Palestras" (antes "Desvendando", renomeado para
 >   não conflitar com a aula low ticket de R$ 47 que já usa esse nome).
@@ -17,7 +17,7 @@
 >   direto. SEM PREÇO NA PÁGINA (o valor é apresentado na conversa; R$ 2.500 / 12x fica só
 >   como referência interna aqui). CTAs sempre em DOIS BOTÕES lado a lado:
 >   1) Agendar (Calendly: https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&month=2026-07)
->   2) Falar no WhatsApp (wa.me/553184240009). Vaga confirmada na conversa.
+>   2) Falar no WhatsApp (wa.me/5531984240009). Vaga confirmada na conversa.
 > DATAS: 24, 25 e 26 de julho de 2026 (sexta a domingo), 9h às 20h.
 > LOCAL: Auditório Ademincon | Av. José Maria Alckmin, 952, Belvedere, Belo Horizonte - MG.
 > CTA: checkout da Sympla (link do evento a confirmar com o usuário).
@@ -209,20 +209,20 @@ Você tem 7 dias após a inscrição pra decidir. Se achar que não é pra você
 - **Estrutura:** Ambiente pensado pra experiência do participante, com estrutura completa, conforto e atmosfera de treinamento imersivo
 - **Estacionamento:** Disponível nas imediações do espaço (pago)
 - **Certificado:** Sim, para todos os participantes
-- **Contato/Suporte:** WhatsApp 31 8424-0009
+- **Contato/Suporte:** WhatsApp 31 9 8424-0009
 
 ---
 
 ## FAQ
 
 - **Pergunta:** Como funciona a inscrição?
-  **Resposta:** Antes de confirmar a vaga, você faz uma conversa online com o Bruno pra alinhar expectativas e validar se a imersão faz sentido pro seu momento. É só agendar o melhor horário no calendário ou chamar no WhatsApp 31 8424-0009.
+  **Resposta:** Antes de confirmar a vaga, você faz uma conversa online com o Bruno pra alinhar expectativas e validar se a imersão faz sentido pro seu momento. É só agendar o melhor horário no calendário ou chamar no WhatsApp 31 9 8424-0009.
 
 - **Pergunta:** Preciso levar algo?
   **Resposta:** Sim. Notebook, caderno e disposição pra aplicar em tempo real. Cada módulo tem práticas de construção e revisão.
 
 - **Pergunta:** Posso parcelar?
-  **Resposta:** Sim, em até 12x. O valor e as condições de pagamento são apresentados na conversa com o Bruno ou no suporte via WhatsApp 31 8424-0009.
+  **Resposta:** Sim, em até 12x. O valor e as condições de pagamento são apresentados na conversa com o Bruno ou no suporte via WhatsApp 31 9 8424-0009.
 
 - **Pergunta:** Tem certificado?
   **Resposta:** Sim, entregue ao final da imersão para todos os participantes.
