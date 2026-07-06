@@ -5,6 +5,13 @@
 [build]
   publish = "."
 
+# Portas locais fixas para não conflitar com outros netlify dev na máquina
+# (o servidor estático interno usa 3999 por padrão)
+[dev]
+  port = 8890
+  staticServerPort = 4100
+  functionsPort = 4001
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
@@ -31,6 +38,10 @@
 [[redirects]]
   from = "/bio"
   to = "/bio/"
+  status = 301
+[[redirects]]
+  from = "/dominando-o-mercado-de-palestras"
+  to = "/dominando-o-mercado-de-palestras/"
   status = 301
 
 [[headers]]
