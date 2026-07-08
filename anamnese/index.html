@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anamnese da Imersão | Apogeu do Palestrante</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/.netlify/images?url=/assets/perfil.png&w=180&h=180&fit=cover&q=80">
+<meta name="description" content="Anamnese de preparação da Imersão do Apogeu do Palestrante. Preencha para a equipe organizar a sua experiência.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141417">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//ajokzpjguhfxxudteetr.supabase.co">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Anamnese da Imersão | Apogeu do Palestrante
+   Identidade compartilhada (marfim + grafite + brasa) — wizard
+   ============================================================ */
+:root{
+  --brasa-300:#FBC97A; --brasa-400:#FBB44C; --brasa-500:#ED7D2B; --brasa-600:#D9641A; --brasa-700:#B23E0C;
+  --grafite-950:#141417; --grafite-900:#1C1C20; --grafite-800:#2A2A30; --grafite-700:#3A3A42; --grafite-500:#5C5C66; --grafite-400:#8A8A94;
+  --marfim:#F6F4F1; --areia:#ECE8E2; --nevoa:#CFCBC4; --bronze:#C9A24B;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --label:"Jost",sans-serif;
+  --ui:"Hanken Grotesk",system-ui,sans-serif;
+  --brasa-grad:linear-gradient(135deg,#FBB44C,#ED7D2B 50%,#C2470F);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--grafite-950); color:var(--marfim);
+  font-family:var(--ui); line-height:1.65; font-size:17px;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+
+/* fundo com motivo de xadrez sutil */
+.page-bg{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.045;
+  background-image:
+    linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%),
+    linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%);
+  background-size:110px 110px;background-position:0 0,55px 55px;
+  mask-image:radial-gradient(75% 55% at 50% 0%,#000,transparent 80%);
+  -webkit-mask-image:radial-gradient(75% 55% at 50% 0%,#000,transparent 80%);
+}
+
+/* header */
+.site-head{padding:26px 0 4px}
+.site-head .brand{
+  font-family:var(--serif); font-weight:600; font-size:22px; line-height:1;
+  color:var(--marfim); text-decoration:none; letter-spacing:-.01em;
+}
+.site-head .brand .do{font-style:italic;font-weight:500;color:var(--brasa-400)}
+
+/* hero curto */
+.intro-head{text-align:center;padding:26px 0 30px}
+.intro-head .overline{
+  font-family:var(--label);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--brasa-400);margin:0 0 16px;font-weight:500;
+}
+.intro-head h1{
+  font-family:var(--serif);font-weight:600;letter-spacing:-.015em;line-height:1.04;
+  font-size:clamp(34px,6vw,56px);margin:0;color:var(--marfim);
+}
+.intro-head h1 em{font-style:italic;font-weight:500;color:var(--brasa-400)}
+.intro-head p{color:var(--nevoa);max-width:52ch;margin:18px auto 0;font-size:16.5px}
+
+/* card do wizard */
+.card{
+  background:#17171B;border:1px solid var(--grafite-800);border-radius:24px;
+  max-width:760px;margin:0 auto 40px;padding:46px 52px 44px;
+  position:relative;overflow:hidden;min-height:360px;
+  box-shadow:0 30px 80px -40px rgba(0,0,0,.8);
+}
+.card::before{
+  content:"";position:absolute;inset:0;opacity:.03;pointer-events:none;
+  background-image:
+    linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%),
+    linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%);
+  background-size:72px 72px;background-position:0 0,36px 36px;
+}
+.card > *{position:relative}
+
+/* progress */
+.progress{display:flex;align-items:center;gap:18px;margin-bottom:34px}
+.progress .bar{flex:1;height:3px;background:var(--grafite-700);border-radius:2px;overflow:hidden}
+.progress .bar i{display:block;height:100%;background:var(--brasa-grad);width:0%;transition:width .35s ease}
+.progress .count{font-family:var(--label);font-size:12.5px;letter-spacing:.16em;color:var(--grafite-400);white-space:nowrap}
+
+/* section header */
+.sec-kicker{font-family:var(--label);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--brasa-400);margin:0 0 12px;font-weight:500}
+.sec-title{font-family:var(--serif);font-weight:600;font-size:clamp(25px,3.2vw,34px);line-height:1.14;margin:0 0 12px;color:var(--marfim)}
+.sec-lead{font-size:16px;color:var(--nevoa);margin:0 0 26px}
+
+/* nota informativa (checklist, avisos) */
+.note{
+  background:rgba(255,255,255,.035);border:1px solid var(--grafite-800);
+  border-left:2px solid var(--brasa-500);border-radius:12px;
+  padding:18px 20px;margin:0 0 28px;white-space:pre-line;
+  font-size:14.5px;color:var(--nevoa);line-height:1.6;
+}
+
+/* campos */
+.fields{display:grid;gap:22px}
+.field{display:grid;gap:9px}
+.field > .lbl{
+  font-family:var(--label);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grafite-400);font-weight:500;
+}
+.field .req{color:var(--brasa-400)}
+.field .help{font-size:13.5px;color:var(--grafite-400);margin:-2px 0 2px;line-height:1.5;font-style:italic;font-family:var(--serif)}
+.field input,.field textarea{
+  font-family:var(--ui);font-size:16px;color:var(--marfim);
+  background:rgba(255,255,255,.04);border:1px solid var(--grafite-700);border-radius:12px;
+  padding:14px 16px;outline:none;width:100%;
+  transition:border-color .15s,box-shadow .15s;
+}
+.field textarea{min-height:96px;resize:vertical;line-height:1.6}
+.field input::placeholder,.field textarea::placeholder{color:var(--grafite-500)}
+.field input:focus,.field textarea:focus{border-color:var(--brasa-500);box-shadow:0 0 0 3px rgba(237,125,43,.15)}
+
+/* opções (radio / checks) como cartões clicáveis */
+.opts{display:grid;gap:10px}
+.opt{
+  display:flex;align-items:flex-start;gap:14px;cursor:pointer;
+  background:rgba(255,255,255,.03);border:1px solid var(--grafite-700);border-radius:13px;
+  padding:15px 18px;transition:border-color .15s,background .15s;
+}
+.opt:hover{border-color:var(--brasa-500);background:rgba(237,125,43,.06)}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt .mark{
+  flex:none;width:22px;height:22px;margin-top:1px;border:1.5px solid var(--grafite-500);
+  display:flex;align-items:center;justify-content:center;transition:all .15s;
+}
+.opt.radio .mark{border-radius:50%}
+.opt.check .mark{border-radius:6px}
+.opt .mark::after{content:"";width:10px;height:10px;border-radius:inherit;background:var(--brasa-500);transform:scale(0);transition:transform .15s}
+.opt.check .mark::after{width:12px;height:12px;border-radius:3px}
+.opt .txt{font-size:15.5px;color:var(--nevoa);line-height:1.5}
+.opt input:checked ~ .mark{border-color:var(--brasa-500)}
+.opt input:checked ~ .mark::after{transform:scale(1)}
+.opt:has(input:checked){border-color:var(--brasa-500);background:rgba(237,125,43,.09)}
+.opt input:focus-visible ~ .mark{box-shadow:0 0 0 3px rgba(237,125,43,.25)}
+
+/* input condicional (opção "outro") */
+.opt-other{margin:2px 0 0;padding-left:36px}
+.opt-other input{
+  font-family:var(--ui);font-size:15px;color:var(--marfim);
+  background:rgba(255,255,255,.04);border:1px solid var(--grafite-700);border-radius:10px;
+  padding:11px 14px;width:100%;outline:none;
+}
+.opt-other input:focus{border-color:var(--brasa-500)}
+
+/* consentimento (checkbox único destacado) */
+.consent{
+  display:flex;align-items:flex-start;gap:14px;cursor:pointer;
+  background:rgba(237,125,43,.05);border:1px solid var(--grafite-700);border-radius:13px;
+  padding:18px 20px;transition:border-color .15s,background .15s;
+}
+.consent:hover{border-color:var(--brasa-500)}
+.consent:has(input:checked){border-color:var(--brasa-500);background:rgba(237,125,43,.09)}
+.consent input{position:absolute;opacity:0;width:1px;height:1px}
+.consent .mark{flex:none;width:24px;height:24px;margin-top:1px;border:1.5px solid var(--grafite-500);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.consent .mark::after{content:"";width:13px;height:13px;border-radius:3px;background:var(--brasa-500);transform:scale(0);transition:transform .15s}
+.consent input:checked ~ .mark{border-color:var(--brasa-500)}
+.consent input:checked ~ .mark::after{transform:scale(1)}
+.consent .txt{font-size:14.5px;color:var(--nevoa);line-height:1.55}
+.consent input:focus-visible ~ .mark{box-shadow:0 0 0 3px rgba(237,125,43,.25)}
+
+/* erro de validação */
+.err{color:#F0A66B;font-size:13.5px;margin:8px 0 0;display:none}
+.field.invalid input,.field.invalid textarea{border-color:#C2470F}
+.field.invalid .err,.opts-block.invalid .err,.consent-block.invalid .err{display:block}
+
+/* botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--label);font-weight:500;font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;padding:12px 28px;min-height:54px;border-radius:999px;border:none;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn-primary{background:var(--brasa-grad);color:#fff;box-shadow:0 10px 28px rgba(217,100,26,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(217,100,26,.4)}
+.btn-primary[disabled]{opacity:.55;cursor:default;transform:none;box-shadow:none}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:34px}
+.nav-row .btn-primary{margin-left:auto;min-width:180px}
+.btn-back{
+  background:none;border:none;color:var(--grafite-400);cursor:pointer;
+  font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:8px 2px;
+}
+.btn-back:hover{color:var(--nevoa)}
+.btn-back[hidden]{display:none}
+
+/* intro / sucesso */
+.center-block{text-align:center;padding:10px 0}
+.center-block .sec-title{font-size:clamp(28px,3.6vw,40px)}
+.center-block .sec-lead{max-width:48ch;margin:0 auto 30px}
+.center-block .btn-primary{min-width:220px}
+.badge{
+  width:76px;height:76px;border-radius:50%;margin:0 auto 26px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(237,125,43,.12);border:1px solid var(--brasa-500);
+}
+.badge svg{width:36px;height:36px;stroke:var(--brasa-400);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.micro{font-family:var(--label);font-size:12.5px;letter-spacing:.06em;color:var(--grafite-400);margin-top:18px}
+
+/* footer */
+.site-foot{border-top:1px solid var(--grafite-800);padding:28px 0 40px;text-align:center}
+.site-foot p{margin:0;font-family:var(--label);font-size:12.5px;letter-spacing:.06em;color:var(--grafite-500)}
+.site-foot .brand{font-family:var(--serif);color:var(--nevoa);font-size:16px}
+.site-foot .brand .do{font-style:italic;color:var(--brasa-400)}
+
+::selection{background:rgba(237,125,43,.28)}
+
+/* responsivo */
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  .intro-head{padding:18px 0 22px}
+  .card{padding:30px 22px 32px;border-radius:18px;margin-bottom:28px}
+  .progress{margin-bottom:26px}
+  .sec-title{font-size:clamp(22px,6vw,28px)}
+  .nav-row{margin-top:28px}
+  .nav-row .btn-primary{min-width:0;flex:1}
+  .btn{min-height:52px;font-size:13px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="page-bg"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Apogeu <span class="do">do</span> Palestrante</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro-head" id="introHead">
+    <p class="overline">Preparação da experiência</p>
+    <h1>Anamnese da <em>Imersão</em></h1>
+    <p>Antes da imersão, a preparação também faz parte da experiência. Reserve alguns minutos para a equipe organizar a sua participação com clareza.</p>
+  </div>
+
+  <main class="card" id="card" aria-live="polite"></main>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="brand">Apogeu <span class="do">do</span> Palestrante</p>
+    <p>© 2026 Apogeu do Palestrante · (31) 9 8424-0009</p>
+  </div>
+</footer>
+
+<script src="/shared-capi.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

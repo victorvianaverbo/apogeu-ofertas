@@ -660,6 +660,55 @@ a:focus-visible, button:focus-visible {
 .oferta .cta-row { margin-top: 2rem; }
 .final .cta-row { justify-content: center; margin-top: 2.4rem; }
 
+/* bônus do dia: destaque bronze levando aos eventos de agosto */
+.bonus {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 34rem;
+  margin-top: 1.1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 162, 75, 0.5);
+  background: linear-gradient(135deg, rgba(201, 162, 75, 0.14), rgba(237, 125, 43, 0.07));
+  transition: transform 0.3s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.bonus:hover {
+  transform: translateY(-2px);
+  border-color: var(--bronze);
+  box-shadow: 0 14px 34px -14px rgba(201, 162, 75, 0.45);
+}
+.bonus__tag {
+  flex-shrink: 0;
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grafite-950);
+  background: linear-gradient(135deg, #E8C87A, #C9A24B);
+  padding: 0.38rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.bonus__txt {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--marfim);
+}
+.bonus__cta {
+  flex-shrink: 0;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E8C87A;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
 /* passos da inscrição (S08) */
 .oferta__passos {
   margin-top: 1.6rem;
@@ -1744,6 +1793,44 @@ body.modal-open { overflow: hidden; }
   color: rgba(246, 244, 241, 0.5);
 }
 
+/* estado de sucesso: aplicação concluída */
+.lead-ok {
+  padding: 1.4rem 0 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.lead-ok[hidden] { display: none; }
+.lead-ok__check {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: var(--brasa-300);
+  border: 1.5px solid rgba(251, 180, 76, 0.5);
+  background: rgba(237, 125, 43, 0.1);
+  margin-bottom: 0.4rem;
+}
+.lead-ok h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--marfim);
+}
+.lead-ok p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--nevoa);
+  max-width: 30ch;
+}
+.lead-ok .btn--fire {
+  width: 100%;
+  margin-top: 1.1rem;
+}
+
 /* =========================================================
    RESPONSIVO — seções 02+
    ========================================================= */
@@ -1796,4 +1883,5 @@ body.modal-open { overflow: hidden; }
   .infos__row { grid-template-columns: 1fr; gap: 0.3rem; }
   .btn--big { width: 100%; padding: 1.2rem 1.5rem; }
   .footer { flex-direction: column; text-align: center; gap: 1.25rem; }
+  .bonus { flex-direction: column; align-items: flex-start; gap: 0.6rem; max-width: none; }
 }

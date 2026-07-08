@@ -29,6 +29,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_iE9KnTOig.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-iNM8.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq5vBM.woff2">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Jost:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="dns-prefetch" href="//ajokzpjguhfxxudteetr.supabase.co">
   <link rel="dns-prefetch" href="//connect.facebook.net">
@@ -84,8 +87,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
 .btn--wpp{padding:1.05rem 2rem;font-size:0.88rem;color:var(--marfim);border:1.5px solid rgba(246,244,241,0.3);background:transparent;transition:border-color 0.3s ease,color 0.3s ease,background 0.3s ease,transform 0.35s var(--ease-spring)}
 .btn--wpp:hover{border-color:var(--brasa-400);color:var(--brasa-300);background:rgba(237,125,43,0.08);transform:translateY(-3px)}
 .btn--wpp:active{transform:translateY(-1px)}
+.bonus{display:flex;align-items:center;gap:1rem;max-width:34rem;margin-top:1.1rem;padding:0.9rem 1.1rem;border-radius:14px;border:1px solid rgba(201,162,75,0.5);background:linear-gradient(135deg,rgba(201,162,75,0.14),rgba(237,125,43,0.07));transition:transform 0.3s var(--ease-out),border-color 0.3s ease,box-shadow 0.3s ease}
+.bonus:hover{transform:translateY(-2px);border-color:var(--bronze);box-shadow:0 14px 34px -14px rgba(201,162,75,0.45)}
+.bonus__tag{flex-shrink:0;font-family:var(--font-label);font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--grafite-950);background:linear-gradient(135deg,#E8C87A,#C9A24B);padding:0.38rem 0.65rem;border-radius:999px;white-space:nowrap}
+.bonus__txt{font-size:0.88rem;line-height:1.45;color:var(--marfim)}
+.bonus__cta{flex-shrink:0;font-family:var(--font-label);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#E8C87A;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
 @media (max-width:1080px){.hero__dates-rail{display:none}.hero__word{font-size:clamp(6rem,22vw,12rem)}.hero__inner{grid-template-columns:1fr;gap:clamp(2rem,5vw,3rem)}.hero__main{grid-column:auto;grid-row:auto}.hero__figure{grid-column:auto;grid-row:auto;justify-self:center;width:min(100%,440px)}}
-@media (max-width:640px){.hero{padding-bottom:clamp(5rem,16vw,7rem)}.hero__inner{padding-top:0}.hero__figure{width:100%}.hero__photo img{aspect-ratio:1/1.05;object-position:50% 14%}.kicker{order:0}.hero__title{order:1;font-size:clamp(2.7rem,12.5vw,3.4rem)}.hero__cta{order:2;margin-top:1.6rem;align-self:stretch}.hero__sub{order:3;margin-top:1.8rem}.hero__pillars{order:4;flex-direction:column;align-items:flex-start;gap:0.7rem}.hero__facts{order:5;gap:1.25rem 1.75rem}.hero__facts li + li::before{display:none}.btn--fire{width:100%}.hero__micro{letter-spacing:0.08em}.cta-row{flex-direction:column;align-items:stretch;width:100%}.cta-row .btn{width:100%}}
+@media (max-width:640px){.hero{padding-bottom:clamp(5rem,16vw,7rem)}.hero__inner{padding-top:0}.hero__figure{width:100%}.hero__photo img{aspect-ratio:1/1.05;object-position:50% 14%}.kicker{order:0}.hero__title{order:1;font-size:clamp(2.7rem,12.5vw,3.4rem)}.hero__cta{order:2;margin-top:1.6rem;align-self:stretch}.hero__sub{order:3;margin-top:1.8rem}.hero__pillars{order:4;flex-direction:column;align-items:flex-start;gap:0.7rem}.hero__facts{order:5;gap:1.25rem 1.75rem}.hero__facts li + li::before{display:none}.btn--fire{width:100%}.hero__micro{letter-spacing:0.08em}.cta-row{flex-direction:column;align-items:stretch;width:100%}.cta-row .btn{width:100%}.bonus{flex-direction:column;align-items:flex-start;gap:0.6rem;max-width:none}}
   </style>
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -139,9 +147,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
         <div class="hero__cta">
           <div class="cta-row">
             <a class="btn btn--fire" href="https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&amp;month=2026-07" target="_blank" rel="noopener">Agendar conversa com o Bruno</a>
-            <a class="btn btn--wpp" href="https://wa.me/5531984240009?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20imers%C3%A3o%20Dominando%20o%20Mercado%20de%20Palestras." target="_blank" rel="noopener">Falar no WhatsApp</a>
           </div>
-          <p class="hero__micro">Vaga confirmada na conversa · Garantia incondicional de 7 dias</p>
+          <p class="hero__micro">Vaga confirmada na conversa</p>
+          <a class="bonus" href="https://lp.apogeudopalestrante.com.br/eventos/" target="_blank" rel="noopener">
+            <span class="bonus__tag">Bônus de hoje</span>
+            <span class="bonus__txt">Aplicou hoje e garantiu a imersão? Você ganha ingresso para os eventos presenciais de agosto.</span>
+            <span class="bonus__cta">Ver os eventos</span>
+          </a>
         </div>
 
         <ul class="hero__facts">
@@ -386,7 +398,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
     </div>
   </section>
 
-  <!-- ===================== SEÇÃO 08 :: INVESTIMENTO + GARANTIA ===================== -->
+  <!-- ===================== SEÇÃO 08 :: INSCRIÇÃO ===================== -->
   <section class="oferta">
     <div class="grain" aria-hidden="true"></div>
     <div class="oferta__inner">
@@ -403,19 +415,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
             <li class="reveal"><i aria-hidden="true"></i>Certificado de participação</li>
           </ul>
 
-          <div class="garantia reveal">
-            <div class="selo" aria-hidden="true">
-              <svg class="selo__ring" viewBox="0 0 120 120">
-                <defs><path id="seloCirc" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0"/></defs>
-                <text><textPath href="#seloCirc">GARANTIA INCONDICIONAL · 7 DIAS ·</textPath></text>
-              </svg>
-              <span class="selo__num">7</span>
-            </div>
-            <div class="garantia__txt">
-              <h3>Garantia incondicional de 7 dias</h3>
-              <p>Você tem 7 dias após a inscrição pra decidir. Se achar que não é pra você, devolvemos 100% do valor, sem justificativa e sem burocracia.</p>
-            </div>
-          </div>
         </div>
 
         <div class="oferta__preco">
@@ -428,9 +427,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
           </ol>
           <div class="cta-row reveal">
             <a class="btn btn--fire" href="https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&amp;month=2026-07" target="_blank" rel="noopener">Agendar minha conversa</a>
-            <a class="btn btn--wpp" href="https://wa.me/5531984240009?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20imers%C3%A3o%20Dominando%20o%20Mercado%20de%20Palestras." target="_blank" rel="noopener">Falar no WhatsApp</a>
           </div>
-          <p class="oferta__micro reveal">Inscrição confirmada na conversa · Garantia incondicional de 7 dias</p>
+          <p class="oferta__micro reveal">Inscrição confirmada na conversa</p>
         </div>
       </div>
     </div>
@@ -506,13 +504,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
           </button></h3>
           <div class="acc__panel" id="faq-5"><div class="acc__panel-in"><p>Não. O intervalo de almoço é livre (12h às 13h30), com opções na região. O coffee break da tarde está incluso nos 3 dias.</p></div></div>
         </div>
-        <div class="acc__item reveal">
-          <h3 class="acc__h"><button class="acc__toggle" type="button" aria-expanded="false" aria-controls="faq-6">
-            <span class="acc__name">E se eu me inscrever e mudar de ideia?</span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button></h3>
-          <div class="acc__panel" id="faq-6"><div class="acc__panel-in"><p>Você tem garantia incondicional de 7 dias após a compra: devolvemos 100% do valor, sem justificativa. Cancelamentos seguem a política da Sympla (solicitação até 7 dias após a compra e até 48h antes do início do evento).</p></div></div>
-        </div>
       </div>
     </div>
   </section>
@@ -532,9 +523,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
       <p class="final__text reveal">Em três dias, você constrói o que a maioria adia a vida inteira: um negócio de palestrante com posicionamento, preço e plano.</p>
       <div class="cta-row reveal">
         <a class="btn btn--fire btn--big" id="cta-final" href="https://calendly.com/brunobettini/reuniao-bruno-bettini?back=1&amp;month=2026-07" target="_blank" rel="noopener">Agendar conversa com o Bruno</a>
-        <a class="btn btn--wpp btn--big" href="https://wa.me/5531984240009?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20imers%C3%A3o%20Dominando%20o%20Mercado%20de%20Palestras." target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
-      <p class="final__micro reveal">24 a 26 de julho · Belo Horizonte · Garantia incondicional de 7 dias</p>
+      <p class="final__micro reveal">24 a 26 de julho · Belo Horizonte</p>
     </div>
 
     <footer class="footer">
@@ -549,16 +539,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brasa-500);outline-
     <div class="lead-modal__card" role="dialog" aria-modal="true" aria-labelledby="leadTitulo">
       <button class="lead-modal__close" type="button" data-close aria-label="Fechar">×</button>
       <p class="lead-modal__tag">Dominando o Mercado de Palestras</p>
-      <h3 class="lead-modal__title" id="leadTitulo">Antes de continuar</h3>
-      <p class="lead-modal__sub">Deixa seu nome e WhatsApp pra gente te acompanhar até a imersão.</p>
+      <h3 class="lead-modal__title" id="leadTitulo">Aplicação para a imersão</h3>
+      <p class="lead-modal__sub">Deixa seus dados. O Bruno analisa sua aplicação e entra em contato com você.</p>
       <form class="lead-modal__form" id="leadForm" novalidate>
         <label for="leadNome">Nome</label>
         <input id="leadNome" name="nome" type="text" autocomplete="name" required minlength="2" placeholder="Seu nome" />
+        <label for="leadEmail">E-mail</label>
+        <input id="leadEmail" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="voce@email.com" />
         <label for="leadFone">WhatsApp</label>
         <input id="leadFone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required minlength="8" placeholder="(31) 99999-9999" />
-        <button class="btn btn--fire" type="submit" id="leadEnviar">Continuar</button>
-        <p class="lead-modal__nota" id="leadNota">Você segue direto pro agendamento.</p>
+        <button class="btn btn--fire" type="submit" id="leadEnviar">Enviar aplicação</button>
+        <p class="lead-modal__nota" id="leadNota">Leva menos de um minuto.</p>
       </form>
+      <div class="lead-ok" id="leadOk" hidden>
+        <span class="lead-ok__check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 12.5 9.5 18 20 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h4>Aplicação concluída</h4>
+        <p>Em breve vamos entrar em contato com você.</p>
+        <button class="btn btn--fire" type="button" data-close>Fechar</button>
+      </div>
     </div>
   </div>
 

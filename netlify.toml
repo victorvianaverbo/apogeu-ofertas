@@ -43,6 +43,36 @@
   from = "/dominando-o-mercado-de-palestras"
   to = "/dominando-o-mercado-de-palestras/"
   status = 301
+[[redirects]]
+  from = "/anamnese"
+  to = "/anamnese/"
+  status = 301
+
+# Ciclo de eventos presenciais — agosto/2026 (identidade Apogeu + cor do programa)
+[[redirects]]
+  from = "/eventos"
+  to = "/eventos/"
+  status = 301
+[[redirects]]
+  from = "/propulsao-em-vendas"
+  to = "/propulsao-em-vendas/"
+  status = 301
+[[redirects]]
+  from = "/lideranca"
+  to = "/lideranca/"
+  status = 301
+[[redirects]]
+  from = "/oratoria"
+  to = "/oratoria/"
+  status = 301
+[[redirects]]
+  from = "/inteligencia-emocional"
+  to = "/inteligencia-emocional/"
+  status = 301
+[[redirects]]
+  from = "/empreenday"
+  to = "/empreenday/"
+  status = 301
 
 [[headers]]
   for = "/*"

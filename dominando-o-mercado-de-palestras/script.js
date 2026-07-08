@@ -110,8 +110,8 @@ if (!SUPPORTS_VIEW_TIMELINE && !REDUCED_MOTION) {
   })();
 }
 
-/* Captura de lead: modal nome+WhatsApp antes do Calendly/WhatsApp,
-   grava no Supabase (REST, com timeout, nunca bloqueia o redirecionamento) */
+/* Aplicação: modal nome+email+WhatsApp, grava no Supabase e confirma na tela
+   (sem redirecionamento; a equipe entra em contato) */
 (function () {
   var SUPA_URL = "https://ajokzpjguhfxxudteetr.supabase.co";
   var SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqb2t6cGpndWhmeHh1ZHRlZXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjQ1NTQsImV4cCI6MjA5MDQwMDU1NH0.TG-ASfMGgNY4BoHsFQx8TQ-4HPVsdbGEu4zJuFAeiNg";
@@ -119,34 +119,32 @@ if (!SUPPORTS_VIEW_TIMELINE && !REDUCED_MOTION) {
 
   var modal = document.getElementById("leadModal");
   var form = document.getElementById("leadForm");
-  if (!modal || !form) return;
-  var nota = document.getElementById("leadNota");
+  var ok = document.getElementById("leadOk");
+  if (!modal || !form || !ok) return;
   var inputNome = document.getElementById("leadNome");
+  var inputEmail = document.getElementById("leadEmail");
   var inputFone = document.getElementById("leadFone");
   var botao = document.getElementById("leadEnviar");
-  var destinoUrl = "";
-  var destinoTipo = "";
 
   document.querySelectorAll(".cta-row a").forEach(function (link) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
-      destinoUrl = link.href;
-      destinoTipo = destinoUrl.indexOf("calendly.com") > -1 ? "calendly" : "whatsapp";
-      nota.textContent = destinoTipo === "calendly"
-        ? "Você segue direto pro agendamento com o Bruno."
-        : "Você segue direto pro WhatsApp.";
       abrir();
     });
   });
 
   function abrir() {
+    form.hidden = false;
+    ok.hidden = true;
     modal.hidden = false;
     document.body.classList.add("modal-open");
     setTimeout(function () { inputNome.focus(); }, 60);
   }
   function fechar() {
+    var concluida = !ok.hidden;
     modal.hidden = true;
     document.body.classList.remove("modal-open");
+    if (concluida) form.reset();
   }
   modal.querySelectorAll("[data-close]").forEach(function (el) {
     el.addEventListener("click", fechar);
@@ -155,16 +153,9 @@ if (!SUPPORTS_VIEW_TIMELINE && !REDUCED_MOTION) {
     if (e.key === "Escape" && !modal.hidden) fechar();
   });
 
-  function salvarLead(nome, telefone) {
-    var utm = (window.getUTMs && window.getUTMs()) || {};
-    var payload = Object.assign({
-      nome: nome,
-      telefone: telefone,
-      destino: destinoTipo,
-      origem: "dominando-o-mercado-de-palestras",
-    }, utm);
+  function post(payload) {
     var ctrl = ("AbortController" in window) ? new AbortController() : null;
-    if (ctrl) setTimeout(function () { ctrl.abort(); }, 1800);
+    if (ctrl) setTimeout(function () { ctrl.abort(); }, 2500);
     return fetch(SUPA_URL + "/rest/v1/" + TABELA, {
       method: "POST",
       headers: {
@@ -176,6 +167,25 @@ if (!SUPPORTS_VIEW_TIMELINE && !REDUCED_MOTION) {
       body: JSON.stringify(payload),
       keepalive: true,
       signal: ctrl ? ctrl.signal : undefined,
+    });
+  }
+
+  function salvarLead(nome, email, telefone) {
+    var utm = (window.getUTMs && window.getUTMs()) || {};
+    var payload = Object.assign({
+      nome: nome,
+      email: email,
+      telefone: telefone,
+      destino: "aplicacao",
+      origem: "dominando-o-mercado-de-palestras",
+    }, utm);
+    return post(payload).then(function (r) {
+      if (r && !r.ok) {
+        // Se a coluna email ainda nao existir na tabela, nao perde o lead
+        var semEmail = Object.assign({}, payload);
+        delete semEmail.email;
+        return post(semEmail).catch(function () {});
+      }
     }).catch(function () {});
   }
 
@@ -183,22 +193,23 @@ if (!SUPPORTS_VIEW_TIMELINE && !REDUCED_MOTION) {
     e.preventDefault();
     if (!form.reportValidity()) return;
     var nome = inputNome.value.trim();
+    var email = inputEmail.value.trim();
     var telefone = inputFone.value.trim();
-    if (!nome || !telefone) return;
+    if (!nome || !email || !telefone) return;
     botao.disabled = true;
     botao.textContent = "Enviando...";
     if (typeof window.track === "function") {
-      window.track("Lead", { content_name: TABELA, destino: destinoTipo }, {
+      window.track("Lead", { content_name: TABELA, destino: "aplicacao" }, {
         fn: nome,
+        em: email,
         ph: telefone.replace(/\D/g, ""),
       });
     }
-    salvarLead(nome, telefone).then(function () {
+    salvarLead(nome, email, telefone).then(function () {
       botao.disabled = false;
-      botao.textContent = "Continuar";
-      fechar();
-      var win = window.open(destinoUrl, "_blank", "noopener");
-      if (!win) window.location.href = destinoUrl;
+      botao.textContent = "Enviar aplicação";
+      form.hidden = true;
+      ok.hidden = false;
     });
   });
 })();

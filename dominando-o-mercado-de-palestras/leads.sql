@@ -7,8 +7,9 @@ create table if not exists public."dominando-o-mercado-de-palestras" (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
   nome text not null,
+  email text,
   telefone text not null,
-  destino text,       -- 'calendly' ou 'whatsapp' (qual botão o lead clicou)
+  destino text,       -- 'aplicacao' (formulário de aplicação da página)
   origem text,        -- 'dominando-o-mercado-de-palestras'
   utm_source text,
   utm_medium text,
@@ -26,3 +27,7 @@ create policy "insert_anon_dominando"
   for insert
   to anon
   with check (true);
+
+-- Se a tabela JA EXISTE (criada antes da coluna email), rodar apenas isto:
+alter table public."dominando-o-mercado-de-palestras"
+  add column if not exists email text;

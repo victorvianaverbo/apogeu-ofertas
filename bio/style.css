@@ -226,18 +226,4 @@ a { color:inherit; text-decoration:none; }
   letter-spacing:0.18em; color:var(--grafite-500);
 }
 
-/* ===== reveal pos-carregamento (sem animacao de entrada bloqueante) ===== */
-@media (prefers-reduced-motion:no-preference) {
-  .bio__head > * { opacity:0; transform:translateY(14px); }
-  .is-loaded .bio__head > * { animation:rise 0.6s var(--ease-out) forwards; }
-  .is-loaded .bio__logo   { animation-delay:0.05s; }
-  .is-loaded .bio__photo  { animation-delay:0.12s; }
-  .is-loaded .bio__name   { animation-delay:0.18s; }
-  .is-loaded .bio__tag    { animation-delay:0.24s; }
-  .is-loaded .bio__sub    { animation-delay:0.30s; }
-  .is-loaded .bio__cue    { animation-delay:0.36s; }
-
-  .lk { opacity:0; transform:translateY(16px); }
-  .is-loaded .lk { animation:rise 0.55s var(--ease-out) forwards; animation-delay:calc(0.38s + var(--d) * 0.07s); }
-}
-@keyframes rise { to { opacity:1; transform:none; } }
+/* Sem animacao de entrada: pagina inteira e above-the-fold (LCP visivel no 1o frame) */

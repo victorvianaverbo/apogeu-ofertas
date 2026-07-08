@@ -10,9 +10,242 @@
 <link rel="apple-touch-icon" href="/assets/perfil.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_iE9KnTOig.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-iNM8.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq5vBM.woff2">
 <link rel="preload" as="image" href="/.netlify/images?url=/assets/perfil.png&w=300&h=300&fit=cover&q=80" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Jost:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+/* =========================================================
+   Bio (link-in-bio) | Apogeu do Palestrante
+   Identidade: marfim + grafite + brasa | Cormorant + Jost + Hanken
+   Arquetipo: Spotlight / Contained Center (fundo grafite + brilho brasa)
+   ========================================================= */
+:root {
+  --brasa-300:#FBC97A; --brasa-400:#FBB44C; --brasa-500:#ED7D2B; --brasa-600:#D9641A; --brasa-700:#B23E0C;
+  --grafite-950:#141417; --grafite-900:#1C1C20; --grafite-800:#2A2A30; --grafite-700:#3A3A42; --grafite-500:#5C5C66; --grafite-400:#8A8A94;
+  --marfim:#F6F4F1; --areia:#ECE8E2; --nevoa:#CFCBC4; --bronze:#C9A24B;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --label:"Jost",system-ui,sans-serif;
+  --ui:"Hanken Grotesk",system-ui,sans-serif;
+  --brasa-grad:linear-gradient(135deg,#FBB44C,#ED7D2B 50%,#C2470F);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body {
+  min-height:100svh;
+  background:var(--grafite-950);
+  color:var(--marfim);
+  font-family:var(--ui);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a { color:inherit; text-decoration:none; }
+
+/* ===== container ===== */
+.bio {
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:clamp(1.8rem,6vw,2.8rem) clamp(1.15rem,5vw,1.5rem) 2rem;
+  /* fundo grafite radial + xadrez diagonal mascarado (assinatura da marca) */
+  background:
+    radial-gradient(90% 55% at 50% 0%, #26262C, var(--grafite-950) 70%);
+  overflow:hidden;
+}
+.bio::before {
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  opacity:0.05; pointer-events:none;
+  background:
+    linear-gradient(45deg, var(--marfim) 25%, transparent 25%, transparent 75%, var(--marfim) 75%),
+    linear-gradient(45deg, var(--marfim) 25%, transparent 25%, transparent 75%, var(--marfim) 75%);
+  background-size:88px 88px;
+  background-position:0 0, 44px 44px;
+  -webkit-mask-image:radial-gradient(70% 55% at 50% 12%, #000, transparent 78%);
+  mask-image:radial-gradient(70% 55% at 50% 12%, #000, transparent 78%);
+}
+/* brilho brasa suave atras da foto */
+.bio__aura {
+  position:absolute; top:clamp(5rem,20vw,9rem); left:50%;
+  width:min(420px,90vw); height:min(420px,90vw);
+  transform:translateX(-50%);
+  background:radial-gradient(circle, rgba(237,125,43,0.22), transparent 62%);
+  z-index:0; pointer-events:none;
+}
+.bio__head, .bio__links, .bio__foot { position:relative; z-index:1; }
+
+/* ===== header / hero ===== */
+.bio__head {
+  width:100%; max-width:440px;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+}
+.bio__logo {
+  height:clamp(46px,13vw,62px); width:auto;
+  margin-bottom:clamp(1.6rem,6vw,2.4rem);
+}
+.bio__photo {
+  position:relative;
+  width:clamp(112px,30vw,140px); aspect-ratio:1;
+  margin-bottom:1.15rem;
+}
+.bio__photo img {
+  width:100%; height:100%; object-fit:cover;
+  border-radius:50%;
+  position:relative; z-index:1;
+  box-shadow:0 12px 40px rgba(0,0,0,0.5);
+}
+.bio__ring {
+  position:absolute; inset:-6px; border-radius:50%;
+  background:var(--brasa-grad);
+  z-index:0;
+  -webkit-mask:radial-gradient(circle, transparent calc(50% - 3px), #000 calc(50% - 2px));
+  mask:radial-gradient(circle, transparent calc(50% - 3px), #000 calc(50% - 2px));
+  opacity:0.9;
+}
+.bio__name {
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(2rem,8vw,2.6rem); line-height:1;
+  letter-spacing:-0.01em; margin-bottom:0.5rem;
+}
+.bio__tag {
+  font-family:var(--label); font-weight:500;
+  font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em;
+  color:var(--brasa-400); margin-bottom:0.9rem;
+  max-width:100%;
+}
+.bio__tag span { color:var(--grafite-500); margin:0 0.3rem; }
+.bio__sub {
+  font-size:0.98rem; color:var(--nevoa); line-height:1.5;
+  max-width:32ch; margin-bottom:clamp(1.8rem,6vw,2.4rem);
+}
+.bio__cue {
+  display:flex; align-items:center; gap:0.7rem;
+  font-family:var(--label); font-size:0.66rem; font-weight:500;
+  text-transform:uppercase; letter-spacing:0.22em; color:var(--grafite-400);
+  margin-bottom:1.3rem;
+}
+.bio__cue span { width:1.8rem; height:1px; background:linear-gradient(90deg,transparent,var(--grafite-500)); }
+.bio__cue span:last-child { background:linear-gradient(90deg,var(--grafite-500),transparent); }
+
+/* ===== links ===== */
+.bio__links {
+  width:100%; max-width:440px;
+  display:flex; flex-direction:column; gap:0.8rem;
+}
+.lk {
+  position:relative;
+  display:flex; align-items:center; gap:0.9rem;
+  padding:1.05rem 1.2rem;
+  background:linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:1.1rem;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  transition:transform 0.35s var(--ease-spring), border-color 0.3s, box-shadow 0.35s var(--ease-out), background 0.3s;
+}
+.lk__body { flex:1; display:flex; flex-direction:column; gap:0.15rem; text-align:left; min-width:0; }
+.lk__title {
+  font-family:var(--ui); font-weight:600; font-size:1rem; line-height:1.2;
+  color:var(--marfim);
+}
+.lk__sub { font-size:0.8rem; color:var(--grafite-400); line-height:1.35; }
+.lk__badge {
+  flex-shrink:0;
+  font-family:var(--label); font-weight:600; font-size:0.62rem;
+  text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--grafite-950); background:var(--brasa-grad);
+  padding:0.32rem 0.55rem; border-radius:0.5rem;
+  align-self:flex-start; margin-top:0.1rem;
+  box-shadow:0 4px 14px rgba(237,125,43,0.3);
+}
+/* pilha de selos (data + local/tipo) */
+.lk__badges {
+  flex-shrink:0;
+  display:flex; flex-direction:column; gap:0.35rem;
+  align-self:flex-start; margin-top:0.1rem;
+}
+.lk__badges .lk__badge { align-self:stretch; margin-top:0; text-align:center; }
+.lk__badge--outline {
+  color:var(--brasa-300);
+  background:rgba(251,180,76,0.08);
+  border:1px solid rgba(251,180,76,0.45);
+  box-shadow:none;
+}
+.lk__arrow { flex-shrink:0; color:var(--brasa-400); transition:transform 0.35s var(--ease-out); }
+.lk__arrow--out { color:var(--grafite-400); }
+
+/* ===== cards de ecossistema (identidade de cada marca) ===== */
+.lk__eco { flex:1; display:flex; flex-direction:column; gap:0.5rem; text-align:left; min-width:0; }
+.lk__ecolabel {
+  font-family:var(--label); font-weight:600; font-size:0.58rem;
+  text-transform:uppercase; letter-spacing:0.2em;
+}
+.lk__logo { width:auto; display:block; object-fit:contain; object-position:left center; }
+.lk__logo--apogeu { height:42px; max-width:78%; }
+.lk__logo--avantik { height:26px; max-width:62%; }
+
+/* Apogeu: fundo grafite + brasa (identidade Apogeu) */
+.lk--apogeu { border-color:rgba(237,125,43,0.28); }
+.lk--apogeu .lk__ecolabel { color:var(--brasa-400); }
+.lk--apogeu .lk__sub { color:var(--grafite-400); }
+@media (hover:hover) {
+  .lk--apogeu:hover { border-color:rgba(237,125,43,0.6); box-shadow:0 14px 34px rgba(0,0,0,0.4), 0 0 30px rgba(237,125,43,0.14); }
+}
+
+/* Avantik: cartao CLARO com dourado + roxo (identidade Avantik) */
+.lk--avantik {
+  background:linear-gradient(180deg, #FFFFFF, #FAFAF9);
+  border-color:rgba(232,185,49,0.55);
+}
+.lk--avantik .lk__ecolabel { color:#2E2B5F; }
+.lk--avantik .lk__sub { color:#64748B; }
+.lk--avantik .lk__arrow--out { color:#2E2B5F; }
+@media (hover:hover) {
+  .lk--avantik:hover {
+    border-color:#E8B931;
+    background:linear-gradient(180deg, #FFFFFF, #FDFBF3);
+    box-shadow:0 14px 34px rgba(0,0,0,0.4), 0 0 30px rgba(232,185,49,0.28);
+  }
+  .lk--avantik:hover .lk__arrow--out { color:#D4A522; transform:translate(3px,-3px); }
+}
+
+@media (hover:hover) {
+  .lk:hover {
+    transform:translateY(-3px);
+    border-color:rgba(237,125,43,0.55);
+    background:linear-gradient(180deg, rgba(237,125,43,0.10), rgba(255,255,255,0.03));
+    box-shadow:0 14px 34px rgba(0,0,0,0.4), 0 0 30px rgba(237,125,43,0.12);
+  }
+  .lk:hover .lk__arrow { transform:translateX(4px); }
+  .lk:hover .lk__arrow--out { transform:translate(3px,-3px); color:var(--brasa-400); }
+}
+.lk:active { transform:translateY(-1px) scale(0.99); }
+
+/* ===== footer ===== */
+.bio__foot {
+  margin-top:auto; padding-top:2.4rem;
+  display:flex; flex-direction:column; align-items:center; gap:0.4rem;
+}
+.bio__ig {
+  font-family:var(--label); font-weight:600; font-size:0.82rem;
+  letter-spacing:0.04em; color:var(--brasa-400);
+  transition:color 0.25s;
+}
+.bio__ig:hover { color:var(--brasa-300); }
+.bio__mark {
+  font-family:var(--label); font-size:0.66rem; text-transform:uppercase;
+  letter-spacing:0.18em; color:var(--grafite-500);
+}
+
+/* Sem animacao de entrada: pagina inteira e above-the-fold (LCP visivel no 1o frame) */
+</style>
 </head>
 <body>
 
@@ -102,11 +335,6 @@
     <p class="bio__mark">Bruno Bettini</p>
   </footer>
 </main>
-
-<script>
-  if (document.readyState !== 'loading') { document.body.classList.add('is-loaded'); }
-  else { document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('is-loaded'); }); }
-</script>
 
 </body>
 </html>

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encontro Entre Palestrantes | Edição Especial Belvedere | Bruno Bettini</title>
+  <title>Oratória e Persuasão | Evento Presencial | Bruno Bettini · Apogeu</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/.netlify/images?url=/assets/perfil.png&w=180&h=180&fit=cover&q=80">
-  <meta name="description" content="O mapa real do negócio de palestras, ao vivo em Belo Horizonte. 08 de julho de 2026, no Belvedere. Com Bruno Bettini, fundador da Avantik Palestras." />
-  <meta property="og:title" content="Encontro Entre Palestrantes | Edição Especial Belvedere" />
-  <meta property="og:description" content="Palestra não é improviso. É negócio. 08 de julho de 2026, 19h, Auditório Ademicon, Belvedere - BH. Com Bruno Bettini." />
+  <meta name="description" content="Oratória e Persuasão — um dia inteiro, presencial, para estruturar seu discurso, dominar a voz e a presença e ler a plateia para persuadir com ética. 22 de agosto de 2026, com Bruno Bettini." />
+  <meta property="og:title" content="Oratória e Persuasão | Evento Presencial · Apogeu" />
+  <meta property="og:description" content="Fale para ser ouvido, não ignorado. Um dia de imersão presencial: estrutura de discurso, voz, presença e persuasão ética. 22 de agosto de 2026, 9h às 18h. Com Bruno Bettini." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" />
+  <meta property="og:url" content="https://lp.apogeudopalestrante.com.br/oratoria/" />
 
   <!-- Meta Pixel Code (adiado para idle: nao bloqueia o carregamento) -->
   <script>
@@ -35,13 +35,18 @@
 <link rel="dns-prefetch" href="//connect.facebook.net">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- CSS crítico inline (above-the-fold: base + hero) -->
+  <!-- CSS crítico inline (above-the-fold: base + hero). Tokens --evento-* = cor do programa (só no hero). -->
   <style>
 :root {
   --brasa-300:#FBC97A; --brasa-400:#FBB44C; --brasa-500:#ED7D2B; --brasa-600:#D9641A; --brasa-700:#B23E0C;
   --grafite-950:#141417; --grafite-900:#1C1C20; --grafite-800:#2A2A30; --grafite-700:#3A3A42; --grafite-500:#5C5C66; --grafite-400:#8A8A94;
   --marfim:#F6F4F1; --areia:#ECE8E2; --nevoa:#CFCBC4; --bronze:#C9A24B;
   --brasa-grad:linear-gradient(135deg,#FBB44C,#ED7D2B 50%,#C2470F);
+  /* Cor do programa (Oratória e Persuasão) — usada SÓ no hero/banner. Resto do site = brasa. */
+  --evento-primary:#FF4000;
+  --evento-accent:#FF6500;
+  --evento-dark:#0E0703;
+  --evento-glow:rgba(255,64,0,0.16);
   --bg:           var(--marfim);
   --surface:      #FFFFFF;
   --muted-bg:     #FBFAF8;
@@ -88,7 +93,7 @@ em { font-style: italic; }
   min-height: 100svh;
   padding: clamp(6rem, 12vw, 9rem) var(--pad) clamp(4rem, 8vw, 7rem);
   overflow: hidden;
-  background: radial-gradient(80% 70% at 50% 0%, #26262C, var(--grafite-950) 75%);
+  background: radial-gradient(85% 75% at 50% 0%, color-mix(in srgb, var(--evento-primary) 16%, var(--evento-dark)), var(--evento-dark) 74%);
   color: var(--on-dark);
 }
 .hero::before {
@@ -111,7 +116,7 @@ em { font-style: italic; }
   left: 0; right: 0; bottom: 0;
   height: 220px;
   z-index: 0;
-  background: radial-gradient(60% 100% at 50% 100%, rgba(237,125,43,0.18), transparent 75%);
+  background: radial-gradient(60% 100% at 50% 100%, var(--evento-glow), transparent 75%);
   pointer-events: none;
 }
 .hero__grid {
@@ -140,16 +145,16 @@ em { font-style: italic; }
   color: var(--nevoa);
   margin-bottom: clamp(1.6rem, 3vw, 2.2rem);
 }
-.kicker__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.kicker__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--evento-primary); flex-shrink: 0; }
 .kicker__sep { width: 1px; height: 0.85rem; background: rgba(255,255,255,0.2); }
-.kicker__ed { color: var(--brasa-400); letter-spacing: 0.16em; }
+.kicker__ed { color: var(--evento-primary); letter-spacing: 0.16em; }
 @media (prefers-reduced-motion: no-preference) {
   .is-loaded .kicker__dot { animation: dotPulse 2.4s ease-out infinite; }
 }
 @keyframes dotPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(237, 125, 43, 0.5); }
-  70%  { box-shadow: 0 0 0 8px rgba(237, 125, 43, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(237, 125, 43, 0); }
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--evento-primary) 50%, transparent); }
+  70%  { box-shadow: 0 0 0 8px color-mix(in srgb, var(--evento-primary) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--evento-primary) 0%, transparent); }
 }
 .hero__title {
   font-family: var(--font-heading);
@@ -163,7 +168,7 @@ em { font-style: italic; }
 .hero__title span { display: block; }
 .hero__title em {
   font-style: italic;
-  color: var(--brasa-400);
+  color: var(--evento-primary);
   position: relative;
 }
 .hero__title em::after {
@@ -171,7 +176,7 @@ em { font-style: italic; }
   position: absolute;
   left: 0; bottom: 0.08em;
   width: 100%; height: 0.09em;
-  background: var(--brasa-500);
+  background: var(--evento-primary);
   opacity: 0.85;
 }
 .hero__sub {
@@ -209,6 +214,8 @@ em { font-style: italic; }
   text-transform: uppercase;
   text-align: center;
   border-radius: 999px;
+  cursor: pointer;
+  border: none;
   transition: transform 0.4s var(--ease-spring),
               box-shadow 0.4s var(--ease-out),
               background-color 0.3s, color 0.3s;
@@ -223,19 +230,12 @@ em { font-style: italic; }
   transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(217, 100, 26, 0.42);
 }
-.btn__price {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0;
-  padding-left: 0.7rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.35);
-}
 .btn--ghost {
   position: relative;
   color: var(--brasa-400);
   padding: 0.95rem 0.2rem;
   font-weight: 500;
+  background: none;
 }
 .btn--ghost::after {
   content: "";
@@ -257,7 +257,7 @@ em { font-style: italic; }
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 1.5rem;
   padding: clamp(2rem, 4vw, 2.8rem) clamp(1.6rem, 4vw, 2.6rem);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 50px rgba(237, 125, 43, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 50px var(--evento-glow);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   overflow: hidden;
@@ -269,7 +269,7 @@ em { font-style: italic; }
   transform: translateX(-50%);
   width: clamp(120px, 45%, 260px);
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--brasa-500), transparent);
+  background: linear-gradient(90deg, transparent, var(--evento-primary), transparent);
   opacity: 0.85;
 }
 .aside__label {
@@ -289,8 +289,31 @@ em { font-style: italic; }
   content: "";
   width: 1.6rem;
   height: 2px;
-  background: var(--accent);
+  background: var(--evento-primary);
   flex-shrink: 0;
+}
+.hero__book {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: -0.3rem auto 1.7rem;
+}
+.hero__book::before {
+  content: "";
+  position: absolute;
+  inset: -18% -8% -4%;
+  z-index: 0;
+  background: radial-gradient(58% 58% at 50% 46%, var(--evento-glow), transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+.hero__book img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  filter: drop-shadow(0 20px 38px rgba(0,0,0,0.55));
 }
 .evlist { list-style: none; display: flex; flex-direction: column; }
 .evrow {
@@ -317,32 +340,6 @@ em { font-style: italic; }
   color: var(--on-dark);
 }
 .evrow__mut { font-family: var(--font-body); font-weight: 400; font-size: 0.85rem; color: var(--nevoa); white-space: nowrap; }
-.evprice {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: 1.8rem;
-  padding: 1.6rem 0 0.4rem;
-}
-.evprice__tag {
-  font-family: var(--font-label);
-  font-size: 0.66rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--brasa-400);
-}
-.evprice__line { display: flex; align-items: baseline; gap: 0.75rem; }
-.evprice__now {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: clamp(3.6rem, 8vw, 4.8rem);
-  line-height: 0.9;
-  color: var(--brasa-500);
-  letter-spacing: -0.01em;
-}
-.evprice__cond { font-family: var(--font-label); font-size: 0.9rem; color: var(--nevoa); }
 .aside__foot {
   margin-top: 1.6rem;
   padding-top: 1.1rem;
@@ -373,7 +370,7 @@ em { font-style: italic; }
 .scroll-cue__rail {
   width: 1px;
   height: 2.6rem;
-  background: linear-gradient(to bottom, var(--accent), transparent);
+  background: linear-gradient(to bottom, var(--evento-primary), transparent);
 }
 @media (prefers-reduced-motion: no-preference) {
   .is-loaded .scroll-cue__rail { animation: cueDrop 2s var(--ease-out) infinite; transform-origin: top; }
@@ -401,10 +398,10 @@ em { font-style: italic; }
   .hero__actions { flex-direction: column; align-items: stretch; width: 100%; }
   .btn--primary, .btn--ghost { width: 100%; }
   .hero__aside { padding: 1.6rem 1.2rem; }
+  .hero__book img { max-width: 210px; }
   .evrow { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.95rem 0; }
   .evrow__v { font-size: 1.3rem; }
   .evrow__mut { white-space: normal; }
-  .evprice__now { font-size: 3rem; }
   .pullquote { font-size: clamp(1.7rem, 8vw, 2.1rem); }
 }
   </style>
@@ -422,60 +419,58 @@ em { font-style: italic; }
         <div class="hero__main">
           <p class="kicker reveal" data-delay="1">
             <span class="kicker__dot" aria-hidden="true"></span>
-            Encontro Entre Palestrantes
+            Oratória e Persuasão
             <span class="kicker__sep" aria-hidden="true"></span>
-            <span class="kicker__ed">Edição Especial Belvedere</span>
+            <span class="kicker__ed">Edição Presencial</span>
           </p>
 
           <h1 class="hero__title">
-            <span class="reveal" data-delay="2">Palestra não é</span>
-            <span class="reveal" data-delay="3"><em>improviso</em>.</span>
-            <span class="reveal" data-delay="4">É negócio.</span>
+            <span class="reveal" data-delay="2">Fale para ser</span>
+            <span class="reveal" data-delay="3"><em>ouvido</em>,</span>
+            <span class="reveal" data-delay="4">não ignorado.</span>
           </h1>
 
           <p class="hero__sub reveal" data-delay="5">
-            O mapa real de onde está o dinheiro do mercado de palestras, ao vivo
-            em Belo Horizonte. Uma noite com quem vive desse mercado todos os dias,
-            negociando contratos e organizando eventos.
+            O que você fala pode entrar por um ouvido e sair pelo outro. O que você é
+            fica na memória. Quem estrutura a fala, domina a voz e lê a plateia ganha
+            espaço, fecha negócio e lidera sala. Oratória não é dom, é técnica.
           </p>
 
           <div class="hero__actions reveal" data-delay="6">
-            <a class="btn btn--primary" href="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" target="_blank" rel="noopener">
+            <a class="btn btn--primary" href="#inscrever" data-cta>
               Garantir minha vaga
-              <span class="btn__price">R$&nbsp;127</span>
             </a>
-            <a class="btn btn--ghost" href="#verdade">Por que essa noite</a>
+            <a class="btn btn--ghost" href="#verdade">Por que esse dia</a>
           </div>
 
           <p class="hero__micro reveal" data-delay="7">
-            08 de julho, 19h · Belvedere, BH · Vagas limitadas ao espaço presencial.
+            22 de agosto, 9h às 18h · Belo Horizonte · Vagas limitadas ao espaço presencial.
           </p>
         </div>
 
-        <!-- Card do evento (mesmo vidro escuro do dateline) -->
+        <!-- Card do evento: livro em destaque + dados (vidro escuro) -->
         <aside class="hero__aside reveal" data-delay="5">
-          <p class="aside__label">O encontro</p>
+          <figure class="hero__book">
+            <img src="/.netlify/images?url=/assets/livros/oratoria.webp&w=500&fm=webp&q=82"
+                 srcset="/.netlify/images?url=/assets/livros/oratoria.webp&w=360&fm=webp&q=82 360w, /.netlify/images?url=/assets/livros/oratoria.webp&w=500&fm=webp&q=82 500w"
+                 sizes="(max-width:540px) 210px, 250px"
+                 width="250" height="250" alt="Livro Oratória e Persuasão — Coleção Foco em Resultados" loading="lazy" decoding="async" />
+          </figure>
+          <p class="aside__label">O evento</p>
           <ul class="evlist">
             <li class="evrow">
               <span class="evrow__k">Data</span>
-              <span class="evrow__v">08 jul 2026 <span class="evrow__mut">· quarta</span></span>
+              <span class="evrow__v">22 ago 2026 <span class="evrow__mut">· sábado</span></span>
             </li>
             <li class="evrow">
               <span class="evrow__k">Horário</span>
-              <span class="evrow__v">19h às 22h <span class="evrow__mut">· credenciamento 18h45</span></span>
+              <span class="evrow__v">9h às 18h <span class="evrow__mut">· credenciamento 8h30</span></span>
             </li>
             <li class="evrow">
               <span class="evrow__k">Local</span>
-              <span class="evrow__v">Auditório Ademicon <span class="evrow__mut">· Belvedere, BH</span></span>
+              <span class="evrow__v">Belo Horizonte <span class="evrow__mut">· local a definir</span></span>
             </li>
           </ul>
-          <div class="evprice">
-            <span class="evprice__tag">2º lote · inscrições até 08/07</span>
-            <span class="evprice__line">
-              <span class="evprice__now">R$&nbsp;127</span>
-              <span class="evprice__cond">em até 12x</span>
-            </span>
-          </div>
           <p class="aside__foot">Apogeu do Palestrante · Bruno Bettini</p>
         </aside>
 
@@ -499,29 +494,31 @@ em { font-style: italic; }
 
           <blockquote class="pullquote">
             <span class="pullquote__mark">“</span>
-            O mercado movimenta milhões. E a maioria entra <em>errado</em>.
+            Você tem a arma e a munição. Falta fazer <em>pontaria</em>.
           </blockquote>
         </div>
 
         <div class="pergunta__body">
           <p data-reveal>
-            Se você tem conhecimento, experiência e bagagem pra ensinar, mas ainda
-            não transformou isso em palestras, mentorias, treinamentos e faturamento
-            real, esse encontro é pra você.
+            Você domina o assunto, mas trava na hora de apresentar. A garganta fecha,
+            a voz some, dá o "branco" e a plateia desliga. Quase nunca é falta de
+            conteúdo: é falta de técnica para entregar o que você já sabe.
           </p>
           <p data-reveal>
-            A maioria entra nesse mercado acreditando que basta
-            <strong>falar bem</strong>, ter conteúdo bom ou esperar a indicação
-            aparecer. Não basta.
+            São os três inimigos de todo orador: a <strong>inibição</strong>, a
+            <strong>desconexão</strong> e a <strong>prolixidade</strong>. Um trava a
+            sua fala, o outro te afasta de quem ouve e o terceiro faz a sua mensagem
+            se perder no meio do caminho.
           </p>
           <p data-reveal>
-            Viver de palestras não depende só de palco. Depende de posicionamento,
-            vendas, relacionamento e estrutura comercial. E depende, principalmente,
-            de entender uma coisa: palestra não é improviso. É negócio.
+            O medo de falar em público supera, em pesquisas, até o medo da morte. E
+            ele não se vence acabando com ele, mas aprendendo a conduzi-lo. Aqui você
+            aprende a falar de modo objetivo, coerente e preciso, prender a atenção e
+            convencer com autoridade.
           </p>
           <p class="pergunta__highlight" data-reveal>
-            Seu conhecimento pode continuar parado, ou pode virar posicionamento,
-            agenda e faturamento. A decisão é sua.
+            Sua fala pode continuar entrando por um ouvido e saindo pelo outro, ou
+            pode ficar na memória de quem te ouve. A decisão é sua.
           </p>
         </div>
 
@@ -531,45 +528,45 @@ em { font-style: italic; }
     <!-- ============ SEÇÃO 02 :: O QUE VOCÊ VAI LEVAR ============ -->
     <section class="levar" id="levar">
       <div class="levar__head">
-        <p class="eyebrow" data-reveal><span class="eyebrow__num">02</span> O que você vai levar dessa noite</p>
-        <h2 class="levar__title" data-reveal>Não é sobre falar melhor. É sobre vender melhor.</h2>
+        <p class="eyebrow" data-reveal><span class="eyebrow__num">02</span> O que você vai levar desse dia</p>
+        <h2 class="levar__title" data-reveal>Não é sobre o que você diz. É sobre como chega.</h2>
         <p class="levar__intro" data-reveal>
-          Aqui não tem frase bonita nem promessa de internet. Tem bastidor real,
-          números reais e a visão de quem entende por que alguns crescem e outros
-          continuam travados. Bruno Bettini mostra como esse mercado funciona de verdade:
+          Nada de frase motivacional. É técnica aplicada de quem estuda e vive a arte
+          de falar em público, transformada em algo que você usa na segunda-feira. Um
+          dia inteiro, do exórdio à chave de ouro:
         </p>
       </div>
 
       <ol class="levar__list">
         <li class="levar__item" data-reveal style="--i:0">
           <span class="levar__num">01</span>
-          <p class="levar__text">Como vender no <b class="k">B2B</b> (para empresas) e no <b class="k">B2C</b> (para pessoa física), sem depender só de indicação</p>
+          <p class="levar__text">Como montar uma <b class="k">estrutura de discurso</b> e usar o storytelling do exórdio à chave de ouro, com a jornada do herói e aberturas que prendem a atenção do início ao fim</p>
         </li>
         <li class="levar__item" data-reveal style="--i:1">
           <span class="levar__num">02</span>
-          <p class="levar__text">Como estruturar seus <b class="k">próprios eventos</b> e não ficar refém da agenda dos outros</p>
+          <p class="levar__text">A <b class="k">voz</b> como sua principal ferramenta: tom, articulação, ressonância, projeção, pausas e modulação para falar com segurança e ser levado a sério</p>
         </li>
         <li class="levar__item" data-reveal style="--i:2">
           <span class="levar__num">03</span>
-          <p class="levar__text">Como usar <b class="k">networking</b> de forma estratégica, não como troca de cartão perdida</p>
+          <p class="levar__text"><b class="k">Presença de palco</b> e linguagem corporal: como o corpo, o olhar e o gesto sustentam a sua mensagem e vencem o medo de estar à frente da sala</p>
         </li>
         <li class="levar__item" data-reveal style="--i:3">
           <span class="levar__num">04</span>
-          <p class="levar__text">Como <b class="k">precificar</b> sua palestra pelo valor que ela entrega, não pelo que você tem coragem de cobrar</p>
+          <p class="levar__text"><b class="k">Leitura de plateia</b> e micro expressões: as emoções universais que te fazem comunicar direto ao subconsciente e ser lembrado por gerar emoção</p>
         </li>
         <li class="levar__item" data-reveal style="--i:4">
           <span class="levar__num">05</span>
-          <p class="levar__text">Como construir um <b class="k">posicionamento forte</b> que faz o cliente te procurar</p>
+          <p class="levar__text"><b class="k">Persuasão com ética</b>: técnicas de influência, empatia e Comunicação Não Violenta para convencer com base na verdade, sem manipular ninguém</p>
         </li>
         <li class="levar__item levar__item--segredo" data-reveal style="--i:5">
           <span class="levar__num">06</span>
-          <p class="levar__text">O segredo que quase ninguém fala: palestrante profissional não vende só palestra. Vende treinamento, mentoria, workshop, seminário, livro, produto, comunidade e <b class="k">recorrência</b></p>
+          <p class="levar__text">Comunicação carismática, copywriting, marca pessoal e <b class="k">oratória no digital</b>: como levar tudo isso do palco para a câmera e para o dia a dia</p>
         </li>
       </ol>
 
       <p class="levar__close" data-reveal>
-        Se você já palestra, essa noite vai mostrar onde você está perdendo dinheiro.
-        Se ainda não começou, vai te poupar anos de erro e frustração.
+        Se você já fala em público, esse dia mostra onde a sua mensagem está se
+        perdendo. Se está começando, te poupa anos de tentativa e erro.
       </p>
     </section>
 
@@ -577,9 +574,9 @@ em { font-style: italic; }
     <section class="prog section--dark" id="programacao">
       <div class="prog__head">
         <p class="eyebrow eyebrow--gold" data-reveal><span class="eyebrow__num">03</span> Programação</p>
-        <h2 class="prog__title" data-reveal>Três horas de mapa, prática e conexão</h2>
+        <h2 class="prog__title" data-reveal>Um dia inteiro de técnica, prática e conexão</h2>
         <p class="prog__intro" data-reveal>
-          Uma programação pensada pra você sair com clareza e com contatos que valem a pena.
+          Da estrutura do discurso à prática ao vivo: conteúdo aplicável, você falando de verdade e contatos que valem a pena.
         </p>
       </div>
 
@@ -587,94 +584,94 @@ em { font-style: italic; }
         <span class="tl__fill" aria-hidden="true"></span>
 
         <div class="tl__item" data-reveal style="--i:0">
-          <span class="tl__time">18h45 <small>às 19h15</small></span>
+          <span class="tl__time">08h30 <small>às 09h00</small></span>
           <span class="tl__node tl__node--social" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">Credenciamento e Coffee</h3>
-            <p class="tl__desc">Recepção, ambientação e as primeiras conexões da noite.</p>
+            <h3 class="tl__name">Credenciamento e Welcome Coffee</h3>
+            <p class="tl__desc">Recepção, ambientação e as primeiras conexões do dia.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:1">
-          <span class="tl__time">19h15 <small>às 19h30</small></span>
+          <span class="tl__time">09h00 <small>às 10h40</small></span>
           <span class="tl__node" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">Abertura Oficial</h3>
-            <p class="tl__desc">Boas-vindas e a proposta do encontro.</p>
+            <h3 class="tl__name">Estrutura de Discurso e Storytelling</h3>
+            <p class="tl__desc">Do exórdio à chave de ouro: a jornada do herói, aberturas que prendem a atenção e como organizar a fala para não se perder no caminho.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:2">
-          <span class="tl__time">19h30 <small>às 20h05</small></span>
+          <span class="tl__time">10h40 <small>às 12h30</small></span>
           <span class="tl__node" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">O Mapa Real do Mercado de Palestras</h3>
-            <p class="tl__desc">Como o mercado realmente funciona: sazonalidades, riscos, oportunidades e por que tantos palestrantes continuam perdidos.</p>
+            <h3 class="tl__name">A Voz, a Presença e o Corpo</h3>
+            <p class="tl__desc">Tom, projeção, pausas e modulação, mais presença de palco e linguagem corporal para vencer o medo e falar com segurança.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:3">
-          <span class="tl__time">20h05 <small>às 20h35</small></span>
-          <span class="tl__node" aria-hidden="true"></span>
+          <span class="tl__time">12h30 <small>às 14h00</small></span>
+          <span class="tl__node tl__node--social" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">B2B, B2C e Venda de Palestras na Prática</h3>
-            <p class="tl__desc">Como vender para empresas, profissionais e eventos sem depender apenas de indicação.</p>
+            <h3 class="tl__name">Almoço e Networking</h3>
+            <p class="tl__desc">Pausa para recarregar e trocar experiências com outros comunicadores.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:4">
-          <span class="tl__time">20h35 <small>às 21h05</small></span>
+          <span class="tl__time">14h00 <small>às 15h40</small></span>
           <span class="tl__node" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">Subindo a Régua do Mercado</h3>
-            <p class="tl__desc">Os erros que o palestrante não pode mais cometer se quer ser percebido com mais profissionalismo, valor e autoridade.</p>
+            <h3 class="tl__name">Leitura de Plateia e Micro Expressões</h3>
+            <p class="tl__desc">As emoções universais e os sinais do rosto: como ler quem te ouve, comunicar direto ao subconsciente e ser lembrado por gerar emoção.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:5">
-          <span class="tl__time">21h05 <small>às 21h30</small></span>
+          <span class="tl__time">15h40 <small>às 17h00</small></span>
           <span class="tl__node" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">Do Palco ao Faturamento</h3>
-            <p class="tl__desc">Funil de vendas, produtos, posicionamento e estrutura pra transformar palestra em negócio.</p>
+            <h3 class="tl__name">Persuasão Ética e Comunicação Carismática</h3>
+            <p class="tl__desc">Influência com base na verdade, empatia e Comunicação Não Violenta, copywriting, marca pessoal e oratória no digital.</p>
           </div>
         </div>
 
         <div class="tl__item" data-reveal style="--i:6">
-          <span class="tl__time">21h30 <small>às 22h00</small></span>
+          <span class="tl__time">17h00 <small>às 18h00</small></span>
           <span class="tl__node tl__node--social" aria-hidden="true"></span>
           <div class="tl__content">
-            <h3 class="tl__name">Direcionamentos Finais e Networking</h3>
-            <p class="tl__desc">Perguntas, conexões qualificadas, troca entre participantes e os próximos caminhos pra evoluir no mercado.</p>
+            <h3 class="tl__name">Prática ao Vivo, Q&amp;A e Networking Final</h3>
+            <p class="tl__desc">Você fala à frente da sala, recebe devolutiva na hora, tira dúvidas e faz as conexões que viram parceria.</p>
           </div>
         </div>
       </div>
 
-      <p class="prog__seal" data-reveal>19h às 22h · Auditório Ademicon, Belvedere</p>
+      <p class="prog__seal" data-reveal>9h às 18h · Belo Horizonte (local a definir)</p>
     </section>
 
     <!-- ============ SEÇÃO 04 :: COMO VAI FUNCIONAR (cards sobrepostos) ============ -->
     <section class="pilares" id="como">
       <div class="pilares__head">
         <p class="eyebrow" data-reveal><span class="eyebrow__num">04</span> Como vai funcionar</p>
-        <h2 class="pilares__title" data-reveal>Conteúdo, prática e networking na mesma noite</h2>
+        <h2 class="pilares__title" data-reveal>Conteúdo, prática e networking no mesmo dia</h2>
       </div>
 
       <div class="pilares__deck">
         <article class="pcard pcard--1" data-reveal style="--i:0">
           <span class="pcard__idx">01</span>
-          <h3 class="pcard__name">Palestra envolvente</h3>
-          <p class="pcard__text">Com Bruno Bettini, fundador do banco de palestrantes Avantik Palestras. Práticas essenciais, dados oficiais do mercado e visão estratégica pra quem quer se destacar.</p>
+          <h3 class="pcard__name">Imersão envolvente</h3>
+          <p class="pcard__text">Com Bruno Bettini, fundador do banco de palestrantes Avantik Palestras. Técnica aplicável, exemplos reais e a visão de quem vive de se comunicar em público.</p>
         </article>
         <article class="pcard pcard--2" data-reveal style="--i:1">
           <span class="pcard__idx">02</span>
           <h3 class="pcard__name">Atividades práticas</h3>
-          <p class="pcard__text">Simulações de situações reais do mercado, pra te preparar pros desafios e oportunidades que você vai encontrar de verdade.</p>
+          <p class="pcard__text">Você fala ao vivo, à frente da sala, e recebe devolutiva na hora, para treinar a técnica antes de levá-la ao palco ou à reunião de verdade.</p>
         </article>
         <article class="pcard pcard--3" data-reveal style="--i:2">
           <span class="pcard__idx">03</span>
           <h3 class="pcard__name">Networking produtivo</h3>
-          <p class="pcard__text">Coffee break e um momento dedicado à troca de cartões. O tipo de conexão que vira parceria.</p>
+          <p class="pcard__text">Coffee, almoço e momentos dedicados à troca com outros comunicadores e empreendedores. O tipo de conexão que vira parceria.</p>
         </article>
       </div>
     </section>
@@ -694,7 +691,7 @@ em { font-style: italic; }
           <h2 class="bio__name" data-reveal>Bruno Bettini</h2>
           <p class="bio__text" data-reveal>
             Fundador da Avantik Palestras, o banco de palestrantes. Bruno vive desse
-            mercado e forma palestrantes que vivem dele.
+            mercado e forma profissionais que vivem dele.
           </p>
           <p class="bio__text" data-reveal>
             Já participou de <span class="hl">licitações milionárias</span>, ganhou
@@ -704,7 +701,7 @@ em { font-style: italic; }
           </p>
           <p class="bio__text" data-reveal>
             Não trabalha com promessa de fim de semana. Trabalha com
-            <span class="hl">construção</span>. E é isso que ele traz pro palco nessa noite.
+            <span class="hl">construção</span>. E é isso que ele traz pro palco nesse dia.
           </p>
           <ul class="bio__chips">
             <li data-reveal>Licitações milionárias</li>
@@ -728,94 +725,66 @@ em { font-style: italic; }
       <div class="bento">
         <article class="bento__cell bento__cell--feature" data-reveal>
           <span class="bento__idx">01</span>
-          <p class="bento__text">Já é palestrante e quer descobrir exatamente <b>onde está perdendo dinheiro</b></p>
+          <p class="bento__text">Domina o assunto, mas <b>trava na hora de apresentar</b> e sente a mensagem se perder</p>
         </article>
         <article class="bento__cell" data-reveal>
           <span class="bento__idx">02</span>
-          <p class="bento__text">Nunca deu uma palestra, mas sabe que tem conhecimento pra ensinar e quer <b>começar certo</b></p>
+          <p class="bento__text">Vive de <b>reunião, venda ou palco</b> e precisa que a sua fala convença de verdade</p>
         </article>
         <article class="bento__cell" data-reveal>
           <span class="bento__idx">03</span>
-          <p class="bento__text">É mentor, consultor, empresário, gestor ou especialista, e sente que seu conhecimento <b>vale mais</b> do que está valendo hoje</p>
+          <p class="bento__text">É líder e precisa <b>comunicar com autoridade</b>, alinhar o time e inspirar quem te ouve</p>
         </article>
         <article class="bento__cell" data-reveal>
           <span class="bento__idx">04</span>
-          <p class="bento__text">Está cansado de depender de indicação e quer <b>estrutura comercial</b> de verdade</p>
+          <p class="bento__text">Quer <b>vencer o medo de falar em público</b> e aprender a conduzir a inibição, não a fingir que ela não existe</p>
         </article>
         <article class="bento__cell" data-reveal>
           <span class="bento__idx">05</span>
-          <p class="bento__text">Quer transformar autoridade em <b>agenda, contratos e faturamento</b></p>
+          <p class="bento__text">Quer construir <b>presença no digital</b> e falar para a câmera com a mesma segurança do palco</p>
         </article>
         <article class="bento__cell bento__cell--cut" data-reveal>
-          <p class="bento__cuttext">Se o seu conhecimento está parado, essa noite existe pra <b>tirá-lo do lugar</b>.</p>
+          <p class="bento__cuttext">Se a sua fala depende de sorte e inspiração, esse dia existe pra trocar isso por <b>técnica</b>.</p>
         </article>
       </div>
     </section>
 
-    <!-- ============ SEÇÃO 07 :: A OFERTA / LOTES (dark spotlight) ============ -->
+    <!-- ============ SEÇÃO 07 :: A OFERTA (dark spotlight, sem preço) ============ -->
     <section class="oferta section--dark" id="oferta">
       <canvas class="oferta__particles" aria-hidden="true"></canvas>
       <div class="oferta__card" data-reveal>
-        <p class="eyebrow eyebrow--gold eyebrow--center"><span class="eyebrow__num">07</span> A oferta</p>
-        <h2 class="oferta__title">Garanta sua vaga antes do <span class="gold">preço subir</span></h2>
+        <p class="eyebrow eyebrow--gold eyebrow--center"><span class="eyebrow__num">07</span> Garanta sua vaga</p>
+        <h2 class="oferta__title">Vagas <span class="gold">limitadas</span> ao espaço presencial</h2>
         <p class="oferta__text">
-          O ingresso dá acesso à noite completa: palestra, atividades práticas,
-          coffee break e networking com outros palestrantes. Os lotes sobem conforme
-          as vagas se esgotam, e o espaço é presencial e limitado.
+          O ingresso dá acesso ao dia completo: imersão, prática ao vivo com
+          devolutiva, coffee, material de apoio e networking com outros comunicadores
+          e empreendedores. As inscrições abrem em breve e o espaço é presencial e limitado.
         </p>
 
-        <ol class="lotes">
-          <li class="lote lote--done" data-reveal style="--i:0">
-            <span class="lote__bar" aria-hidden="true"></span>
-            <span class="lote__price">R$ 97</span>
-            <span class="lote__name">1º Lote</span>
-            <span class="lote__state">Encerrado</span>
-          </li>
-          <li class="lote lote--active" data-reveal style="--i:1">
-            <span class="lote__badge">Você está aqui</span>
-            <span class="lote__bar" aria-hidden="true"></span>
-            <span class="lote__price">R$ 127</span>
-            <span class="lote__name">2º Lote</span>
-            <span class="lote__state">Até 08/07</span>
-          </li>
-          <li class="lote lote--next" data-reveal style="--i:2" title="Inscrições até 08/07/2026">
-            <span class="lote__bar" aria-hidden="true"></span>
-            <span class="lote__price">R$ 147</span>
-            <span class="lote__name">3º Lote</span>
-            <span class="lote__state">Em breve</span>
-          </li>
-          <li class="lote lote--next" data-reveal style="--i:3" title="Inscrições até 08/07/2026">
-            <span class="lote__bar" aria-hidden="true"></span>
-            <span class="lote__price">R$ 177</span>
-            <span class="lote__name">4º Lote</span>
-            <span class="lote__state">Em breve</span>
-          </li>
-        </ol>
-
-        <div class="oferta__price">
-          <span class="oferta__pricetag">2º Lote · Inscrições até 08/07</span>
-          <span class="oferta__priceline">
-            <span class="oferta__now">R$&nbsp;127</span>
-          </span>
-          <span class="oferta__cond">em até 12x</span>
+        <div class="oferta__soon" data-reveal>
+          <span class="oferta__soontag">Inscrições em breve</span>
+          <p class="oferta__soontext">
+            Deixe seu nome e WhatsApp e seja avisado(a) em primeira mão — com
+            condição especial pra quem entrar na lista antes da abertura.
+          </p>
         </div>
 
-        <a class="btn btn--primary btn--lg oferta__cta" href="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" target="_blank" rel="noopener">
-          Quero minha vaga · 2º lote R$&nbsp;127
+        <a class="btn btn--primary btn--lg oferta__cta" href="#inscrever" data-cta>
+          Quero garantir minha vaga
         </a>
 
         <div class="oferta__reassure">
           <span class="oferta__seal">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Compra segura via Sympla
+            Inscrição em poucos segundos
           </span>
           <span class="oferta__bullet" aria-hidden="true"></span>
-          <span class="oferta__micro">Parcele em até 12x. Vagas limitadas ao espaço presencial.</span>
+          <span class="oferta__micro">Vagas limitadas ao espaço presencial.</span>
         </div>
 
         <p class="oferta__anchor">
-          Uma única palestra que você deixou de vender por falta de estrutura vale
-          muitas vezes o preço dessa noite.
+          Uma única oportunidade que você deixou passar por travar na hora de falar
+          vale muitas vezes o valor desse dia.
         </p>
       </div>
     </section>
@@ -830,27 +799,25 @@ em { font-style: italic; }
         <div class="ticket__body">
           <div class="ticket__row" data-reveal style="--i:0">
             <span class="ticket__k">Data e horário</span>
-            <span class="ticket__v">08 de julho de 2026 (quarta-feira). Credenciamento a partir das 18h45. Evento das 19h às 22h.</span>
+            <span class="ticket__v">22 de agosto de 2026 (sábado). Credenciamento a partir das 8h30. Evento das 9h às 18h.</span>
           </div>
           <div class="ticket__row" data-reveal style="--i:1">
             <span class="ticket__k">Local</span>
-            <span class="ticket__v">
-              <a class="ticket__map" href="https://maps.google.com/?q=Av.+Jos%C3%A9+Maria+Alckmin,+952,+Belvedere,+Belo+Horizonte" target="_blank" rel="noopener">Auditório Ademicon — Av. José Maria Alckmin, 952, Belvedere, Belo Horizonte - MG.</a>
-            </span>
+            <span class="ticket__v">Belo Horizonte - MG. Endereço completo a definir — enviado a todos os inscritos.</span>
           </div>
           <div class="ticket__row" data-reveal style="--i:2">
-            <span class="ticket__k">Vestimenta</span>
-            <span class="ticket__v">Sem preocupação. A maioria vem direto do trabalho.</span>
+            <span class="ticket__k">Inclui</span>
+            <span class="ticket__v">Imersão completa, prática ao vivo com devolutiva, coffee, material de apoio e certificado de participação.</span>
           </div>
           <div class="ticket__row" data-reveal style="--i:3">
-            <span class="ticket__k">Pagamento</span>
-            <span class="ticket__v">Parcele em até 12x. Dados criptografados e compra segura pela Sympla.</span>
+            <span class="ticket__k">Inscrição</span>
+            <span class="ticket__v">As inscrições abrem em breve. Deixe seu nome e WhatsApp para garantir seu lugar e ser avisado(a) em primeira mão.</span>
           </div>
         </div>
         <div class="ticket__stub">
-          <span class="ticket__vert">Encontro</span>
-          <span class="ticket__date">08 JUL</span>
-          <span class="ticket__hour">19h</span>
+          <span class="ticket__vert">Oratória</span>
+          <span class="ticket__date">22 AGO</span>
+          <span class="ticket__hour">9h</span>
         </div>
       </div>
     </section>
@@ -867,50 +834,50 @@ em { font-style: italic; }
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">01</span>
-              <span class="faq__qtext">Já sou palestrante há anos. Faz sentido eu ir?</span>
+              <span class="faq__qtext">Sirvo se travo só de pensar em falar em público?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Sim. O evento traz bastidores reais do mercado e abre espaço pra novas parcerias. Palestrantes experientes costumam ser os que mais destravam o próximo nível quando revisam posicionamento e vendas.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>Especialmente. A inibição é o primeiro obstáculo que o dia ataca. Sentir medo é natural e até protege; o que muda é aprender a controlá-lo. Você sai com estrutura, voz e técnica para tirar o medo do caminho e falar com segurança.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">02</span>
-              <span class="faq__qtext">Nunca dei uma palestra. É recomendável participar?</span>
+              <span class="faq__qtext">É só para quem faz palestra?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Sim. Você recebe o conteúdo essencial pra começar sua trajetória sem perder anos tateando no escuro.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>Não. Vale para reuniões, negociações, vídeos, liderança e qualquer momento em que a sua mensagem precisa chegar, presencial ou no digital. Com oratória você não vira só um comunicador melhor, mas alguém mais persuasivo e admirado.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">03</span>
-              <span class="faq__qtext">Vai ter momento de networking?</span>
+              <span class="faq__qtext">Isso é manipulação?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Vai. Haverá coffee break e uma sessão dedicada à troca de cartões e conexões.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>Não. Persuasão não é manipulação. Você aprende a influenciar e convencer com base na verdade dos fatos e na ética, despertando emoção e conexão real, sem enganar ninguém para conseguir um sim.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">04</span>
-              <span class="faq__qtext">Preciso de alguma vestimenta especial?</span>
+              <span class="faq__qtext">Preciso levar algo? Tem vestimenta?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Não. Fique à vontade. A maioria dos participantes vem direto do trabalho.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>Só o que quiser para anotar — o material de apoio a gente entrega. Sem vestimenta especial; a maioria vem direto do trabalho.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">05</span>
-              <span class="faq__qtext">Posso parcelar o ingresso?</span>
+              <span class="faq__qtext">Como funciona a inscrição? Já dá pra comprar?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Sim, em até 12x pela Sympla, com compra segura.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>As inscrições abrem em breve. Deixe seu nome e WhatsApp na página para entrar na lista: você é avisado(a) em primeira mão e garante condição especial antes da abertura ao público.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
               <span class="faq__qnum">06</span>
-              <span class="faq__qtext">E se eu precisar cancelar?</span>
+              <span class="faq__qtext">E se eu não puder comparecer?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Cancelamentos de pedidos pagos são aceitos até 7 dias após a compra, desde que a solicitação seja enviada até 48 horas antes do início do evento.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>As condições de remarcação e reembolso serão informadas junto com a abertura das inscrições. Quem está na lista recebe tudo por escrito antes de confirmar.</p></div></div>
           </div>
           <div class="faq__item" data-reveal>
             <button class="faq__q" aria-expanded="false">
@@ -918,7 +885,7 @@ em { font-style: italic; }
               <span class="faq__qtext">Como esclareço outras dúvidas?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a"><div class="faq__a-inner"><p>Fale com o produtor pelo botão de contato. Retornamos rápido pra te ajudar.</p></div></div>
+            <div class="faq__a"><div class="faq__a-inner"><p>Deixe seu contato na página. A gente retorna pelo WhatsApp pra te ajudar com qualquer dúvida antes do evento.</p></div></div>
           </div>
         </div>
       </div>
@@ -927,29 +894,30 @@ em { font-style: italic; }
     <!-- ============ SEÇÃO 10 :: CTA FINAL (poster + countdown) ============ -->
     <section class="final section--dark" id="final">
       <div class="final__ghost" aria-hidden="true">
-        <span data-ghost="1">liderança</span>
-        <span data-ghost="2">vendas</span>
-        <span data-ghost="3">negócio</span>
+        <span data-ghost="1">palco</span>
+        <span data-ghost="2">voz</span>
+        <span data-ghost="3">presença</span>
       </div>
       <div class="final__inner">
         <p class="eyebrow eyebrow--gold" data-reveal><span class="eyebrow__num">10</span> Última chamada</p>
         <h2 class="final__title">
-          <span class="reveal-line">Os clientes vão</span>
-          <span class="reveal-line">contratar alguém.</span>
+          <span class="reveal-line">Alguém vai</span>
+          <span class="reveal-line">comandar a sala.</span>
           <span class="reveal-line">A pergunta é: <em>vai ser você?</em></span>
         </h2>
         <p class="final__text" data-reveal>
-          A palestra de liderança vai acontecer. A de vendas vai acontecer. Todos os
-          dias, em todo o Brasil. A única dúvida é quem vai estar no palco.
+          Todos os dias, em toda reunião, palco e câmera, alguém fala e é ouvido, e
+          alguém fala e é ignorado. A única dúvida é quem estruturou a fala, dominou a
+          voz e leu a plateia — e quem está contando com a inspiração do momento.
         </p>
         <p class="final__text" data-reveal>
-          Nessa noite, em Belo Horizonte, você começa a entender como sair do campo da
-          ideia e entrar no campo do <span class="hl">resultado</span>. Não é sobre
-          falar melhor. É sobre transformar o que você sabe em negócio.
+          Nesse dia, em Belo Horizonte, você troca o "branco" e o improviso por
+          técnica que se repete. Não é sobre falar mais. É sobre transformar a sua
+          fala em <span class="hl">presença</span>.
         </p>
 
         <div class="count" data-reveal>
-          <p class="count__label">O encontro começa em</p>
+          <p class="count__label">O evento começa em</p>
           <div class="count__grid" id="countdown">
             <span class="count__cell"><span class="count__num" data-cd="d">--</span><span class="count__unit">dias</span></span>
             <span class="count__sep" aria-hidden="true">:</span>
@@ -961,20 +929,20 @@ em { font-style: italic; }
           </div>
         </div>
 
-        <a class="btn btn--primary btn--lg" href="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" target="_blank" rel="noopener" data-reveal>
-          Garantir minha vaga agora · R$&nbsp;127
+        <a class="btn btn--primary btn--lg" href="#inscrever" data-cta data-reveal>
+          Garantir minha vaga agora
         </a>
-        <p class="final__micro" data-reveal>08 de julho, 19h, Belvedere - BH. Em até 12x. Vagas limitadas. Bruno Bettini.</p>
+        <p class="final__micro" data-reveal>22 de agosto, 9h às 18h, Belo Horizonte. Vagas limitadas. Bruno Bettini.</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer__inner">
-      <span class="footer__brand">Encontro Entre Palestrantes · Apogeu do Palestrante · Bruno Bettini</span>
-      <a class="footer__cta" href="https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515" target="_blank" rel="noopener">Garantir minha vaga · R$ 127</a>
+      <span class="footer__brand">Oratória e Persuasão · Apogeu do Palestrante · Bruno Bettini</span>
+      <a class="footer__cta" href="#inscrever" data-cta>Garantir minha vaga</a>
     </div>
-    <p class="footer__legal">Cancelamento até 7 dias após a compra, com solicitação até 48h antes do evento. Compra processada pela Sympla.</p>
+    <p class="footer__legal">Evento presencial · vagas limitadas ao espaço. Ao deixar seus dados você concorda em receber os detalhes do evento por WhatsApp e e-mail.</p>
   </footer>
 
   <script>
@@ -992,8 +960,8 @@ em { font-style: italic; }
     <div class="lead-modal__card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
       <button class="lead-modal__x" type="button" data-close aria-label="Fechar">&times;</button>
       <p class="lead-modal__eyebrow">Falta pouco</p>
-      <h3 class="lead-modal__title" id="leadModalTitle">Garanta sua vaga no Encontro</h3>
-      <p class="lead-modal__sub">Deixe seu nome e WhatsApp para seguir com a inscrição e receber os detalhes do evento.</p>
+      <h3 class="lead-modal__title" id="leadModalTitle">Garanta sua vaga no evento</h3>
+      <p class="lead-modal__sub">Deixe seu nome e WhatsApp para garantir seu lugar no Oratória e Persuasão e receber os detalhes em primeira mão.</p>
       <form class="lead-modal__form" id="leadForm" novalidate>
         <div class="lead-field">
           <label for="lead-nome">Seu nome</label>
@@ -1004,36 +972,43 @@ em { font-style: italic; }
           <input id="lead-zap" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required>
         </div>
         <p class="lead-modal__err" id="leadErr" hidden>Preencha nome e WhatsApp para continuar.</p>
-        <button class="btn btn--primary btn--lg lead-modal__submit" type="submit">Continuar para a inscrição</button>
-        <p class="lead-modal__micro">Você será direcionado para o checkout seguro da Sympla.</p>
+        <button class="btn btn--primary btn--lg lead-modal__submit" type="submit">Quero garantir minha vaga</button>
+        <p class="lead-modal__micro">As inscrições abrem em breve — avisamos você em primeira mão.</p>
       </form>
+      <div class="lead-modal__done" id="leadDone" hidden style="text-align:center;">
+        <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--brasa-grad);color:#fff;font-size:1.7rem;margin:0.2rem auto 1.1rem;">&#10003;</span>
+        <h3 class="lead-modal__title">Inscrição registrada!</h3>
+        <p class="lead-modal__sub">Seu lugar no Oratória e Persuasão está anotado. Em breve enviamos os detalhes no seu WhatsApp.</p>
+        <button class="btn btn--primary btn--lg" type="button" data-close style="margin-top:0.4rem;">Fechar</button>
+      </div>
     </div>
   </div>
 
   <script src="script.js" defer></script>
   <script src="/shared-capi.js" defer></script>
-  <!-- Captura de lead + Meta Pixel/CAPI antes de ir para a Sympla -->
+  <!-- Captura de lead + Meta Pixel/CAPI (modo placeholder: sem checkout, sem redirect) -->
   <script>
   (function () {
     var SUPA_URL = "https://ajokzpjguhfxxudteetr.supabase.co";
     var SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqb2t6cGpndWhmeHh1ZHRlZXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjQ1NTQsImV4cCI6MjA5MDQwMDU1NH0.TG-ASfMGgNY4BoHsFQx8TQ-4HPVsdbGEu4zJuFAeiNg";
-    var SYMPLA = "https://www.sympla.com.br/evento/encontro-entre-palestrantes-edicao-especial-belvedere-apogeu-do-palestrante/3482515";
+
+    var EVENTO = "oratoria";
+    var CONTENT_NAME = "Oratória e Persuasão";
 
     var modal = document.getElementById("leadModal");
     var form = document.getElementById("leadForm");
     var errEl = document.getElementById("leadErr");
-    var targetUrl = SYMPLA;
+    var doneEl = document.getElementById("leadDone");
 
-    function open(url) {
-      targetUrl = url || SYMPLA;
+    function open() {
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
       var n = document.getElementById("lead-nome");
       if (n) setTimeout(function () { n.focus(); }, 60);
-      // intencao de compra
+      // intencao de inscricao
       if (typeof window.track === "function") {
-        window.track("InitiateCheckout", { content_name: "Ingresso Encontro Belvedere", value: 127, currency: "BRL" });
+        window.track("InitiateCheckout", { content_name: CONTENT_NAME });
       }
     }
     function close() {
@@ -1042,15 +1017,14 @@ em { font-style: italic; }
       document.body.style.overflow = "";
     }
 
-    // Intercepta todos os CTAs que iam para a Sympla
+    // Qualquer CTA [data-cta] abre o modal de captura
     document.addEventListener("click", function (e) {
-      // cliques dentro do proprio popup nao sao CTAs
       if (e.target.closest && e.target.closest(".lead-modal")) {
         if (e.target.closest("[data-close]")) close();
         return;
       }
-      var cta = e.target.closest && e.target.closest('a[href*="sympla.com.br"]');
-      if (cta) { e.preventDefault(); open(cta.href); return; }
+      var cta = e.target.closest && e.target.closest("[data-cta]");
+      if (cta) { e.preventDefault(); open(); return; }
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 
@@ -1058,10 +1032,10 @@ em { font-style: italic; }
       try {
         var utm = (window.getUTMs && window.getUTMs()) || {};
         var payload = Object.assign(
-          { nome: nome, whatsapp: whatsapp, origem: "lp-encontro-belvedere" },
+          { evento: EVENTO, nome: nome, whatsapp: whatsapp, origem: "lp-evento-" + EVENTO },
           utm
         );
-        return fetch(SUPA_URL + "/rest/v1/encontro_leads", {
+        return fetch(SUPA_URL + "/rest/v1/eventos_agosto_leads", {
           method: "POST",
           headers: {
             "apikey": SUPA_KEY,
@@ -1090,13 +1064,17 @@ em { font-style: italic; }
 
       // Lead (Pixel + CAPI) com nome/telefone para match
       if (typeof window.track === "function") {
-        window.track("Lead", { content_name: "Inscricao Encontro Belvedere", value: 127, currency: "BRL" }, { ph: zap, fn: nome });
+        window.track("Lead", { content_name: CONTENT_NAME }, { ph: zap, fn: nome });
       }
 
-      var went = false;
-      function go() { if (went) return; went = true; window.location.href = targetUrl; }
-      saveLead(nome, zap).finally(go);
-      setTimeout(go, 1500); // fallback: nunca prende o usuario
+      var shown = false;
+      function done() {
+        if (shown) return; shown = true;
+        form.hidden = true;
+        doneEl.hidden = false;
+      }
+      saveLead(nome, zap).finally(done);
+      setTimeout(done, 1500); // fallback: nunca prende o usuario
     });
   })();
   </script>
