@@ -47,7 +47,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -1601,4 +1601,14 @@ em { font-style: italic; }
 .lead-modal__done p { color: var(--on-dark-2); font-size: 0.98rem; line-height: 1.5; }
 @media (prefers-reduced-motion: reduce) {
   .lead-modal__overlay, .lead-modal__card { animation: none; }
+}
+/* ============================================================
+   MOBILE HARDENING — sem rolagem horizontal + refino em telas muito pequenas
+   ============================================================ */
+@media (max-width: 380px) {
+  .hero__title { font-size: clamp(2.2rem, 12vw, 2.95rem); }
+  .kicker { font-size: 0.6rem; letter-spacing: 0.12em; }
+  .count__num { font-size: 1.7rem; }
+  .count__grid { gap: 0.5rem; }
+  .oferta__soontag { text-align: center; }
 }
